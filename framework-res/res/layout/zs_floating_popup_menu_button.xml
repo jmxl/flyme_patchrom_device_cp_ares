@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button android:textSize="14.0dip" android:textColor="@color/zs_color_button_font_selector" android:ellipsize="end" android:background="@color/transparent" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_margin="0.0dip" android:maxWidth="180.0dip" android:minWidth="48.0dip" android:maxLines="2" android:layout_weight="1.0" android:textAllCaps="true" android:fontFamily="sans-serif-medium" android:textAlignment="textStart" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:stateListAnimator="@null"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

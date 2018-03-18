@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape android:tint="@color/zs_seekbar_thumb_disabled_color" android:shape="ring" android:useLevel="false" android:innerRadius="0.0dip" android:thickness="3.0dip" android:opticalInsetLeft="3.0dip" android:opticalInsetRight="3.0dip">
+            <solid android:color="@color/white" />
+            <size android:height="16.0dip" android:width="16.0dip" />
+        </shape>
+    </item>
+</animated-selector>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center|left" android:orientation="horizontal" android:id="@id/permissions_dialog_title" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:minHeight="54.0dip">
+            <TextView android:textSize="16.0sp" android:textColor="#ff000000" android:id="@id/permissions_title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center|left" android:orientation="horizontal" android:id="@id/dialog_middle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/title">
+        <ListView android:id="@id/permission_list" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center|right" android:orientation="horizontal" android:id="@id/bottom_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" android:layout_below="@id/dialog_middle">
+        <Button android:textSize="14.0sp" android:textColor="#ff1bc1ff" android:id="@id/permission_button1" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/buttonBarButtonStyle" />
+        <Button android:textSize="14.0sp" android:textColor="#ff1bc1ff" android:id="@id/permission_button2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8.0dip" style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+</RelativeLayout>

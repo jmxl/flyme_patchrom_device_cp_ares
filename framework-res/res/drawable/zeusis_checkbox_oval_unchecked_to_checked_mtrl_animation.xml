@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector android:drawable="@drawable/zeusis_checkbox_oval_unchecked_mtrl"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <target android:name="uncheckBackgroundGroup" android:animation="@anim/zeusis_checkbox_oval_to_checked_all_animation" />
+    <target android:name="unCheckBackgroundPath" android:animation="@anim/zeusis_checkbox_oval_to_checked_inner_uncheckbackgroup_animation" />
+    <target android:name="toCheckBackgroundPath" android:animation="@anim/zeusis_checkbox_oval_to_checked_outer_tocheckbackgroup_animation" />
+    <target android:name="arrowGroup" android:animation="@anim/zeusis_checkbox_oval_to_checked_arrowgroup_animation" />
+    <target android:name="arrowPath" android:animation="@anim/zeusis_checkbox_oval_to_checked_arrowpath_animation" />
+</animated-vector>

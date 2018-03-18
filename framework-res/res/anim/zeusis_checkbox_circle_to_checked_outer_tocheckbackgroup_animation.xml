@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <set android:ordering="sequentially">
+        <objectAnimator android:interpolator="@interpolator/zeusis_checkbox_scale_animation_interpolator" android:duration="135" android:valueFrom="M2,12 C2,6.4771525 6.47593818,2 12,2 C17.5228475,2 22,6.47593818 22,12 C22,17.5228475 17.5240618,22 12,22 C6.4771525,22 2,17.5240618 2,12 Z M12,11 C11.4477,11 11,11.4477 11,12 C11,12.5523 11.4477,13 12,13 C12.5523,13 13,12.5523 13,12 C13,11.4477 12.5523,11 12,11 Z" android:valueTo="M2,12 C2,6.4771525 6.47593818,2 12,2 C17.5228475,2 22,6.47593818 22,12 C22,17.5228475 17.5240618,22 12,22 C6.4771525,22 2,17.5240618 2,12 Z M12,11 C11.4477,11 11,11.4477 11,12 C11,12.5523 11.4477,13 12,13 C12.5523,13 13,12.5523 13,12 C13,11.4477 12.5523,11 12,11 Z" android:valueType="pathType" android:propertyName="pathData" />
+        <objectAnimator android:interpolator="@interpolator/zeusis_checkbox_scale_animation_interpolator" android:duration="165" android:valueFrom="M2,12 C2,6.4771525 6.47593818,2 12,2 C17.5228475,2 22,6.47593818 22,12 C22,17.5228475 17.5240618,22 12,22 C6.4771525,22 2,17.5240618 2,12 Z M12,11 C11.4477,11 11,11.4477 11,12 C11,12.5523 11.4477,13 12,13 C12.5523,13 13,12.5523 13,12 C13,11.4477 12.5523,11 12,11 Z" android:valueTo="M2,12 C2,6.4771525 6.47593818,2 12,2 C17.5228475,2 22,6.47593818 22,12 C22,17.5228475 17.5240618,22 12,22 C6.4771525,22 2,17.5240618 2,12 Z M12,6 C8.68629,6 6,8.68629 6,12 C6,15.3137 8.68629,18 12,18 C15.3137,18 18,15.3137 18,12 C18,8.68629 15.3137,6 12,6 Z" android:valueType="pathType" android:propertyName="pathData" />
+    </set>
+    <set android:ordering="sequentially">
+        <objectAnimator android:interpolator="@interpolator/zeusis_checkbox_scale_animation_interpolator" android:duration="135" android:valueFrom="0.0" android:valueTo="0.0" android:propertyName="fillAlpha" />
+        <objectAnimator android:interpolator="@interpolator/zeusis_checkbox_scale_animation_interpolator" android:duration="5" android:valueFrom="0.0" android:valueTo="1.0" android:propertyName="fillAlpha" />
+    </set>
+</set>

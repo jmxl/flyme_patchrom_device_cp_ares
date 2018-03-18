@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageButton android:id="@id/zs_float_pop_text_ImageBtn_arrow_right" android:background="@color/colorFloatPopTextArrowBg" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/zeusis_float_pop_text_arrow_right" android:layout_centerVertical="true" android:layout_alignParentEnd="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

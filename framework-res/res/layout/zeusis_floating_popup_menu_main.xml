@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <HorizontalScrollView android:id="@id/zs_float_pop_text_hsv_main" android:scrollbars="none" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentStart="true" android:layout_alignParentEnd="true">
+        <LinearLayout android:orientation="horizontal" android:id="@id/zs_float_pop_text_layout_main_panel" android:background="@color/colorFloatPopTextMenuItemBg" android:layout_width="wrap_content" android:layout_height="@dimen/zs_float_pop_text_height" />
+    </HorizontalScrollView>
+    <ImageButton android:id="@id/zs_float_pop_text_ImageBtn_arrow_left" android:background="@color/colorFloatPopTextArrowBg" android:clickable="true" android:layout_width="@dimen/zs_float_pop_text_height" android:layout_height="@dimen/zs_float_pop_text_height" android:src="@drawable/zeusis_float_pop_text_arrow_left" android:layout_centerVertical="true" android:layout_alignParentStart="true" />
+    <ImageButton android:id="@id/zs_float_pop_text_ImageBtn_arrow_right" android:background="@color/colorFloatPopTextArrowBg" android:clickable="true" android:layout_width="@dimen/zs_float_pop_text_height" android:layout_height="@dimen/zs_float_pop_text_height" android:src="@drawable/zeusis_float_pop_text_arrow_right" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+</RelativeLayout>

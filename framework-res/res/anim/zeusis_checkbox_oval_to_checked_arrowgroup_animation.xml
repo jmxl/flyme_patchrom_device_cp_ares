@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <set android:ordering="sequentially">
+        <objectAnimator android:interpolator="@interpolator/zeusis_checkbox_easeout_animation_interpolator" android:duration="135" android:valueFrom="75" android:valueTo="75" android:propertyName="rotation" />
+        <objectAnimator android:interpolator="@interpolator/zeusis_checkbox_easeout_animation_interpolator" android:duration="165" android:valueFrom="75" android:valueTo="0" android:propertyName="rotation" />
+    </set>
+    <set android:ordering="sequentially">
+        <objectAnimator android:interpolator="@interpolator/zeusis_checkbox_easeout_animation_interpolator" android:duration="135" android:valueFrom="0.2" android:valueTo="0.2" android:propertyName="scaleX" />
+        <objectAnimator android:interpolator="@interpolator/zeusis_checkbox_easeout_animation_interpolator" android:duration="165" android:valueFrom="0.2" android:valueTo="1" android:propertyName="scaleX" />
+    </set>
+    <set android:ordering="sequentially">
+        <objectAnimator android:interpolator="@interpolator/zeusis_checkbox_easeout_animation_interpolator" android:duration="135" android:valueFrom="0.2" android:valueTo="0.2" android:propertyName="scaleY" />
+        <objectAnimator android:interpolator="@interpolator/zeusis_checkbox_easeout_animation_interpolator" android:duration="165" android:valueFrom="0.2" android:valueTo="1" android:propertyName="scaleY" />
+    </set>
+</set>

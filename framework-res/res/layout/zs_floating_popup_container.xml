@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/FloatingToolBarArrow2T" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/zs_svg_floatingtoolbar_triangle_p2t" />
+    <RelativeLayout android:id="@id/MainContainer" android:layout_width="fill_parent" android:layout_height="@dimen/dimenFloatingToolbarContentHeight">
+        <HorizontalScrollView android:id="@id/FloatingToolBarHScrollView" android:scrollbars="none" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:overScrollMode="never" android:layout_alignParentStart="true" android:layout_alignParentEnd="true">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/FloatingToolBarItemContainer" android:background="@color/colorFloatingToolbarItemBackground" android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAligned="false" android:divider="@drawable/zs_shape_floatingtoolbar_layout_divider" android:showDividers="middle" />
+        </HorizontalScrollView>
+        <LinearLayout android:orientation="horizontal" android:id="@id/FloatingToolBarArrow2LContainer" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:divider="@drawable/zs_shape_floatingtoolbar_layout_divider" android:showDividers="end" android:layout_alignParentStart="true">
+            <ImageButton android:id="@id/FloatingToolBarArrow2L" android:background="@color/colorFloatingToolbarItemBackground" android:clickable="true" android:layout_width="@dimen/dimenFloatingToolbarContentMinWidth" android:layout_height="fill_parent" android:src="@drawable/zs_svg_floatingtoolbar_triangle_p2l" android:minWidth="@dimen/dimenFloatingToolbarContentMinWidth" />
+        </LinearLayout>
+        <ImageButton android:id="@id/FloatingToolBarArrow2R" android:background="@color/colorFloatingToolbarItemBackground" android:clickable="true" android:layout_width="@dimen/dimenFloatingToolbarContentMinWidth" android:layout_height="fill_parent" android:src="@drawable/zs_svg_floatingtoolbar_triangle_p2r" android:minWidth="@dimen/dimenFloatingToolbarContentMinWidth" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/FloatingToolBarArrow2B" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/zs_svg_floatingtoolbar_triangle_p2b" />
+</LinearLayout>

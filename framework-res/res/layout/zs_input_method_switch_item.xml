@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?listPreferredItemHeightSmall" android:paddingStart="24.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentStart="true">
+            <TextView android:textSize="16.0sp" android:textColor="#ff000000" android:ellipsize="marquee" android:id="@id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:fontFamily="NotoSansHans-Regular" />
+            <TextView android:textSize="14.0sp" android:textColor="#b8000000" android:ellipsize="marquee" android:id="@id/text2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:fontFamily="NotoSansHans-Light" />
+        </LinearLayout>
+        <ImageView android:gravity="center_vertical" android:id="@id/zs_InputMethodSwitchItem_Image" android:visibility="invisible" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/confirm_on_svg_1bc1ff_24x24" android:layout_centerVertical="true" android:layout_marginEnd="24.0dip" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <View android:gravity="bottom" android:background="@drawable/inset_inputmethod_lang_list_item_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

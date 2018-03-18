@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="193.0dip">
+        <com.android.server.policy.CustomImageButtonLandscape android:id="@id/icon_custom1" android:background="@drawable/ic_lock_power_off_bg" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_lock_power_off1" android:scaleType="center" />
+        <TextView android:textAppearance="?textAppearanceLarge" android:textSize="14.0sp" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/message_custom1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/global_action_power_off" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="74.0dip">
+        <ImageButton android:id="@id/icon_custom2" android:background="@drawable/ic_lock_power_reboot_bg" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_lock_power_reboot1" android:scaleType="center" />
+        <TextView android:textAppearance="?textAppearanceLarge" android:textSize="14.0sp" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/message_custom2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/global_action_reboot" />
+    </LinearLayout>
+</LinearLayout>

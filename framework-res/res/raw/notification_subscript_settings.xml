@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<XmlBaseHelper date="2016-12-01    04:13:39">
+  <subscriptNode>
+    <subscriptKey>com.android.deskclock</subscriptKey>
+    <subscriptValue>0</subscriptValue>
+  </subscriptNode>
+  <subscriptNode>
+    <subscriptKey>com.tencent.mm</subscriptKey>
+    <subscriptValue>1</subscriptValue>
+  </subscriptNode>
+  <subscriptNode>
+    <subscriptKey>com.yulong.android.coolmart</subscriptKey>
+    <subscriptValue>1</subscriptValue>
+  </subscriptNode>
+  <subscriptNode>
+    <subscriptKey>com.android.messaging</subscriptKey>
+    <subscriptValue>1</subscriptValue>
+  </subscriptNode>
+  <subscriptNode>
+    <subscriptKey>com.journeyui.ota</subscriptKey>
+    <subscriptValue>1</subscriptValue>
+  </subscriptNode>
+</XmlBaseHelper>
