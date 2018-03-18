@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above
+ *       copyright notice, this list of conditions and the following
+ *       disclaimer in the documentation and/or other materials provided
+ *       with the distribution.
+ *     * Neither the name of The Linux Foundation nor the names of its
+ *       contributors may be used to endorse or promote products derived
+ *       from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ * BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+ * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+-->
+
+<power_optimization version="1.0">
+    <sencemode 
+        name="app_default"
+        id="0"
+        actions="0"
+        perfPolicy="-1" />
+
+    <sencemode 
+        name="app_launcher"
+        id="1"
+        actions="1"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_game|com.tencent.tmgp.sgame,com.netease.onmyoji.uc,com.netease.onmyoji.coolpad,com.tencent.tmgp.yys.zqb,com.netease.onmyoji,com.netease.zmq,com.netease.zmq.coolpad,com.netease.zmq.uc,com.tencent.tmgp.cf"
+        id="2"
+        actions="2"
+        actions_spec="17"
+        perfPolicy="7"/>
+
+    <sencemode 
+        name="app_text"
+        id="3"
+        actions="3"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_text_night"
+        id="4"
+        actions="4"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_browser"
+        id="5"
+        actions="5"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_browser_night"
+        id="6"
+        actions="6" 
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_instance_commu"
+        id="7"
+        actions="7"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_camera_snap"
+        id="8"
+        actions="8"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_camera_record"
+        id="9"
+        actions="9"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_setting"
+        id="10"
+        actions="10"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_short_message"
+        id="11"
+        actions="11"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_contact"
+        id="12"
+        actions="12"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_navigation"
+        id="13"
+        actions="13"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_local_video"
+        id="14"
+        actions="14"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_streaming_video"
+        id="15"
+        actions="15"
+        perfPolicy="-1"/>
+
+    <sencemode 
+        name="app_video_call"
+        id="16"
+        actions="16"
+        perfPolicy="-1"/>
+
+</power_optimization>

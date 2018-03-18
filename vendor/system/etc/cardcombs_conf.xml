@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2014, Yulong Co., Ltd.
+     Not a Contribution
+
+     File name: cardcombs.xml
+     Description: This document describes the requirements of each operator, which
+     specifies the network capabilities each card could support in different
+     combinations of two cards
+
+     Department:   Communication Software Development
+     Author:       Communication Software team
+     Version:      V1.00.01
+     Date:         2015.09.17
+
+     History
+     Author:       wangdewang
+     Date:         2017.01.16
+     Modification: create
+-->
+
+<!-- <cardcombinfos: the combination of two cards -->
+<!-- <cardcomb slot0: the card infomation of slot0 -->
+<!-- <info slot1: the card infomation of slot1 -->
+<!-- cm_custom_5mode
+         cm： China Mobile
+         custom: customized products
+         5mode: sub0: GSM/TD/WCDMA/LTE, sub1: GSM -->
+<!-- cm_custom_6mode
+         cm: China Mobile
+         custom: customized products
+         6mode: sub0: GSM/TD/WCDMA/LTE/CDMA, sub1: GSM -->
+<!-- cm_6mode
+         cm: China Mobile
+         6mode: sub0: GSM/TD/WCDMA/LTE/CDMA, sub1: GSM/TD/WCDMA/LTE -->
+<!-- cu_gtwl: cu represents China Unicom product, gtwl represents the current
+              product support the network capabilities of GSM, TD, WCDMA, LTE -->
+<!-- "x1,x2,x3,x4": x1 represents the primary slot id, 0-slot0, 1-slot -1-unchange
+                    x2 represents the prefer network of primary card
+                    x3 represents the prefer network of secondary card
+                    x4 represents whether to allow manual switching priamry card -->
+
+<cardcombinfos version="1.0">
+    <cardcomb slot0="CMUSIM">
+        <info slot1="CMUSIM"      cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="-1,1,1,0" />
+        <info slot1="CMSIM"       cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="0,1,1,0" />
+        <info slot1="OVERSEAUSIM" cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,20,1"  cu_gtwl="1,9,1,0" />
+        <info slot1="OVERSEASIM"  cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,20,1"  cu_gtwl="1,9,1,0" />
+        <info slot1="CTCSIM"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,5,0"   cm_6mode="0,20,8,1"   cu_gtwl="0,1,1,0" />
+        <info slot1="CTRUIM"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,5,0"   cm_6mode="0,20,8,1"   cu_gtwl="0,1,1,0" />
+        <info slot1="CUUSIM"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,20,1"  cu_gtwl="1,9,9,0" />
+        <info slot1="CUSIM"       cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,20,1"  cu_gtwl="1,9,9,0" />
+        <info slot1="NOCARD"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,1,0"   cu_gtwl="0,1,1,0" />
+    </cardcomb>
+
+    <cardcomb slot0="CMSIM">
+        <info slot1="CMUSIM"      cm_custom_5mode="1,20,20,1"  cm_custom_6mode="1,20,20,1"  cm_6mode="1,20,20,1"  cu_gtwl="1,1,1,0" />
+        <info slot1="CMSIM"       cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="-1,1,1,0" />
+        <info slot1="OVERSEAUSIM" cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,20,1"  cu_gtwl="1,9,1,0" />
+        <info slot1="OVERSEASIM"  cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,20,1"  cu_gtwl="1,9,1,0" />
+        <info slot1="CTCSIM"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,5,0"   cm_6mode="0,20,8,1"   cu_gtwl="0,1,1,0" />
+        <info slot1="CTRUIM"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,5,0"   cm_6mode="0,20,8,1"   cu_gtwl="0,1,1,0" />
+        <info slot1="CUUSIM"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,20,1"  cu_gtwl="1,9,9,0" />
+        <info slot1="CUSIM"       cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,20,1"  cu_gtwl="1,9,9,0" />
+        <info slot1="NOCARD"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,1,0"   cu_gtwl="0,1,1,0" />
+    </cardcomb>
+
+    <cardcomb slot0="OVERSEAUSIM">
+        <info slot1="CMUSIM"      cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,20,1"  cu_gtwl="0,9,1,0" />
+        <info slot1="CMSIM"       cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,20,1"  cu_gtwl="0,9,1,0" />
+        <info slot1="OVERSEAUSIM" cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="1,9,1,0" />
+        <info slot1="OVERSEASIM"  cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="1,9,1,0" />
+        <info slot1="CTCSIM"      cm_custom_5mode="0,20,8,1"   cm_custom_6mode="0,20,8,1"   cm_6mode="0,20,8,1"   cu_gtwl="0,9,1,0" />
+        <info slot1="CTRUIM"      cm_custom_5mode="0,20,8,1"   cm_custom_6mode="0,20,8,1"   cm_6mode="0,20,8,1"   cu_gtwl="0,9,1,0" />
+        <info slot1="CUUSIM"      cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="-1,9,1,1" />
+        <info slot1="CUSIM"       cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="0,9,1,0" />
+        <info slot1="NOCARD"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,1,0"   cu_gtwl="0,9,1,0" />
+    </cardcomb>
+
+    <cardcomb slot0="OVERSEASIM">
+        <info slot1="CMUSIM"      cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,20,1"  cu_gtwl="0,9,1,0" />
+        <info slot1="CMSIM"       cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,20,1"  cu_gtwl="0,9,1,0" />
+        <info slot1="OVERSEAUSIM" cm_custom_5mode="1,20,20,1"  cm_custom_6mode="1,20,20,1"  cm_6mode="1,20,20,1"  cu_gtwl="1,9,1,0" />
+        <info slot1="OVERSEASIM"  cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="1,9,1,0" />
+        <info slot1="CTCSIM"      cm_custom_5mode="0,20,8,1"   cm_custom_6mode="0,20,8,1"   cm_6mode="0,20,8,1"   cu_gtwl="0,9,1,0" />
+        <info slot1="CTRUIM"      cm_custom_5mode="0,20,8,1"   cm_custom_6mode="0,20,8,1"   cm_6mode="0,20,8,1"   cu_gtwl="0,9,1,0" />
+        <info slot1="CUUSIM"      cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"   cu_gtwl="1,9,1,0" />
+        <info slot1="CUSIM"       cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="-1,9,1,1" />
+        <info slot1="NOCARD"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,1,0"   cu_gtwl="0,9,1,0" />
+    </cardcomb>
+
+    <cardcomb slot0="CTCSIM">
+        <info slot1="CMUSIM"      cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,5,0"   cm_6mode="1,20,8,1"   cu_gtwl="1,1,1,0" />
+        <info slot1="CMSIM"       cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,5,0"   cm_6mode="1,20,8,1"   cu_gtwl="1,1,1,0" />
+        <info slot1="OVERSEAUSIM" cm_custom_5mode="0,8,20,1"   cm_custom_6mode="0,8,20,1"   cm_6mode="0,8,20,1"   cu_gtwl="1,9,1,0" />
+        <info slot1="OVERSEASIM"  cm_custom_5mode="0,8,20,1"   cm_custom_6mode="0,8,20,1"   cm_6mode="0,8,20,1"   cu_gtwl="1,9,1,0" />
+        <info slot1="CTCSIM"      cm_custom_5mode="0,8,8,1"    cm_custom_6mode="0,8,8,1"    cm_6mode="0,8,8,1"    cu_gtwl="-1,1,1,0" />
+        <info slot1="CTRUIM"      cm_custom_5mode="0,8,8,1"    cm_custom_6mode="0,8,8,1"    cm_6mode="0,8,8,1"    cu_gtwl="0,1,1,0" />
+        <info slot1="CUUSIM"      cm_custom_5mode="0,8,20,1"   cm_custom_6mode="0,8,20,1"   cm_6mode="0,8,20,1"   cu_gtwl="1,9,8,0" />
+        <info slot1="CUSIM"       cm_custom_5mode="0,8,20,1"   cm_custom_6mode="0,8,20,1"   cm_6mode="0,8,20,1"   cu_gtwl="1,9,8,0" />
+        <info slot1="NOCARD"      cm_custom_5mode="0,8,1,0"    cm_custom_6mode="0,8,1,0"    cm_6mode="0,8,1,0"    cu_gtwl="0,1,1,0" />
+    </cardcomb>
+
+    <cardcomb slot0="CTRUIM">
+        <info slot1="CMUSIM"      cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,5,0"   cm_6mode="1,20,8,1"   cu_gtwl="1,1,1,0" />
+        <info slot1="CMSIM"       cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,5,0"   cm_6mode="1,20,8,1"   cu_gtwl="1,1,1,0" />
+        <info slot1="OVERSEAUSIM" cm_custom_5mode="0,8,20,1"   cm_custom_6mode="0,8,20,1"   cm_6mode="0,8,20,1"   cu_gtwl="1,9,1,0" />
+        <info slot1="OVERSEASIM"  cm_custom_5mode="0,8,20,1"   cm_custom_6mode="0,8,20,1"   cm_6mode="0,8,20,1"   cu_gtwl="1,9,1,0" />
+        <info slot1="CTCSIM"      cm_custom_5mode="1,8,8,1"    cm_custom_6mode="1,8,8,1"    cm_6mode="1,8,8,1"    cu_gtwl="1,1,1,0" />
+        <info slot1="CTRUIM"      cm_custom_5mode="0,8,8,1"    cm_custom_6mode="0,8,8,1"    cm_6mode="0,8,8,1"    cu_gtwl="-1,1,1,0" />
+        <info slot1="CUUSIM"      cm_custom_5mode="0,8,20,1"   cm_custom_6mode="0,8,20,1"   cm_6mode="0,8,20,1"   cu_gtwl="1,9,8,0" />
+        <info slot1="CUSIM"       cm_custom_5mode="0,8,20,1"   cm_custom_6mode="0,8,20,1"   cm_6mode="0,8,20,1"   cu_gtwl="1,9,8,0" />
+        <info slot1="NOCARD"      cm_custom_5mode="0,8,1,0"    cm_custom_6mode="0,8,1,0"    cm_6mode="0,8,1,0"    cu_gtwl="0,1,1,0" />
+    </cardcomb>
+
+    <cardcomb slot0="CUUSIM">
+        <info slot1="CMUSIM"      cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,20,1"  cu_gtwl="0,9,9,0" />
+        <info slot1="CMSIM"       cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,20,1"  cu_gtwl="0,9,9,0" />
+        <info slot1="OVERSEAUSIM" cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="-1,9,1,1" />
+        <info slot1="OVERSEASIM"  cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="0,9,1,0" />
+        <info slot1="CTCSIM"      cm_custom_5mode="0,20,8,1"   cm_custom_6mode="0,20,8,1"   cm_6mode="0,20,8,1"   cu_gtwl="0,9,8,0" />
+        <info slot1="CTRUIM"      cm_custom_5mode="0,20,8,1"   cm_custom_6mode="0,20,8,1"   cm_6mode="0,20,8,1"   cu_gtwl="0,9,8,0" />
+        <info slot1="CUUSIM"      cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="0,9,9,0" />
+        <info slot1="CUSIM"       cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="0,9,9,0" />
+        <info slot1="NOCARD"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,1,0"   cu_gtwl="0,9,1,0" />
+    </cardcomb>
+
+    <cardcomb slot0="CUSIM">
+        <info slot1="CMUSIM"      cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,20,1"  cu_gtwl="0,9,9,0" />
+        <info slot1="CMSIM"       cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,20,1"  cu_gtwl="0,9,9,0" />
+        <info slot1="OVERSEAUSIM" cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="1,9,1,0" />
+        <info slot1="OVERSEASIM"  cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="-1,9,1,1" />
+        <info slot1="CTCSIM"      cm_custom_5mode="0,20,8,1"   cm_custom_6mode="0,20,8,1"   cm_6mode="0,20,8,1"   cu_gtwl="0,9,8,0" />
+        <info slot1="CTRUIM"      cm_custom_5mode="0,20,8,1"   cm_custom_6mode="0,20,8,1"   cm_6mode="0,20,8,1"   cu_gtwl="0,9,8,0" />
+        <info slot1="CUUSIM"      cm_custom_5mode="1,20,20,1"  cm_custom_6mode="1,20,20,1"  cm_6mode="1,20,20,1"  cu_gtwl="1,9,9,0" />
+        <info slot1="CUSIM"       cm_custom_5mode="0,20,20,1"  cm_custom_6mode="0,20,20,1"  cm_6mode="0,20,20,1"  cu_gtwl="0,9,9,0" />
+        <info slot1="NOCARD"      cm_custom_5mode="0,20,1,0"   cm_custom_6mode="0,20,1,0"   cm_6mode="0,20,1,0"   cu_gtwl="0,9,1,0" />
+    </cardcomb>
+
+    <cardcomb slot0="NOCARD">
+        <info slot1="CMUSIM"      cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,1,0"   cu_gtwl="1,1,1,0" />
+        <info slot1="CMSIM"       cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,1,0"   cu_gtwl="1,1,1,0" />
+        <info slot1="OVERSEAUSIM" cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,1,0"   cu_gtwl="1,9,1,0" />
+        <info slot1="OVERSEASIM"  cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,1,0"   cu_gtwl="1,9,1,0" />
+        <info slot1="CTCSIM"      cm_custom_5mode="1,1,1,0"    cm_custom_6mode="1,8,1,0"    cm_6mode="1,8,1,0"    cu_gtwl="1,1,1,0" />
+        <info slot1="CTRUIM"      cm_custom_5mode="1,1,1,0"    cm_custom_6mode="1,8,1,0"    cm_6mode="1,8,1,0"    cu_gtwl="1,1,1,0" />
+        <info slot1="CUUSIM"      cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,1,0"   cu_gtwl="1,9,1,0" />
+        <info slot1="CUSIM"       cm_custom_5mode="1,20,1,0"   cm_custom_6mode="1,20,1,0"   cm_6mode="1,20,1,0"   cu_gtwl="1,9,1,0" />
+        <info slot1="NOCARD"      cm_custom_5mode="-1,1,1,0"   cm_custom_6mode="-1,1,1,0"   cm_6mode="-1,1,1,0"   cu_gtwl="-1,1,1,0" />
+    </cardcomb>
+</cardcombinfos>

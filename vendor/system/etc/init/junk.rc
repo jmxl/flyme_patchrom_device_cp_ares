@@ -1,0 +1,21 @@
+on post-fs-data
+    mkdir /data/junk-server  0777 root root
+    mkdir /junk/junk-server  0660 root root
+
+on property:sys.boot_completed=1 && property:persist.sys.zeusis.junk.enable=1
+    mkdir /data/junk-server  0777 root root
+    restart junkserverd
+
+on property:persist.sys.zeusis.junk.enable=0
+    stop junkserverd
+
+on property:persist.sys.phone.beta.state=true && property:persist.sys.zeusis.junk.enable=1 && property:sys.boot_completed=1
+    restart junkserverd
+
+on property:persist.sys.phone.beta.state=false && property:persist.sys.zeusis.junk.enable=1 && property:sys.boot_completed=1
+    restart junkserverd
+    
+service junkserverd /system/bin/junkserver
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+    oneshot

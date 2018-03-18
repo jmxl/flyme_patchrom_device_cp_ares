@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2016 Qualcomm Technologies, Inc.
+All Rights Reserved.
+Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+<plmnOverrides>
+    <plmnOverride numeric="20201" plmn="GR COSMOTE"/>
+    <plmnOverride numeric="20205" plmn="Vodafone GR"/>
+    <plmnOverride numeric="20210" plmn="Wind GR"/>
+    <plmnOverride numeric="20402"  plmn="Tele2 NL" />
+    <plmnOverride numeric="20404"  plmn="Vodafone NL" />
+    <plmnOverride numeric="20408"  plmn="KPN NL" />
+    <plmnOverride numeric="20412"  plmn="Telfort NL"/>
+    <plmnOverride numeric="20416"  plmn="T-Mobile NL" />
+    <plmnOverride numeric="20418"  plmn="Ziggo NL" />
+    <plmnOverride numeric="20420"  plmn="T-Mobile NL" />
+    <plmnOverride numeric="20601"  plmn="Proximus BE" />
+    <plmnOverride numeric="20605"  plmn="Telenet BE" />
+    <plmnOverride numeric="20610"  plmn="Mobistar BE" />
+    <plmnOverride numeric="20620"  plmn="Base BE" />
+    <plmnOverride numeric="20801"  plmn="Orange FR"/>
+    <plmnOverride numeric="20802"  plmn="Orange FR"/>
+    <plmnOverride numeric="20810"  plmn="SFR FR"/>
+    <plmnOverride numeric="20811"  plmn="SFR FR" />
+    <plmnOverride numeric="20814"  plmn="Free FR" />
+    <plmnOverride numeric="20815"  plmn="Free FR" />
+    <plmnOverride numeric="20820"  plmn="Bouyges FR"/>
+    <plmnOverride numeric="20821"  plmn="Bouyges FR" />
+    <plmnOverride numeric="20888"  plmn="Bouyges FR" />
+    <plmnOverride numeric="21401"  plmn="Vodafone ES" />
+    <plmnOverride numeric="21403"  plmn="Orange ES" />
+    <plmnOverride numeric="21404"  plmn="Yoigo ES" />
+    <plmnOverride numeric="21405"  plmn="Tuenty ES" />
+    <plmnOverride numeric="21406"  plmn="Vodafone ES" />
+    <plmnOverride numeric="21407"  plmn="Movistar ES"/>
+    <plmnOverride numeric="21408"  plmn="Euskaltel ES"/>
+    <plmnOverride numeric="21418"  plmn="ONO ES" />
+    <plmnOverride numeric="21419"  plmn="Simyo ES" />
+    <plmnOverride numeric="21421"  plmn="Jazztel ES" />
+    <plmnOverride numeric="21432"  plmn="Tuenty ES"/>
+    <plmnOverride numeric="21435"  plmn="Movil ES" />
+    <plmnOverride numeric="21601"  plmn="Telenor HU"/>
+    <plmnOverride numeric="21630"  plmn="Telekom HU"/>
+    <plmnOverride numeric="21670"  plmn="Vodafone HU"/>
+    <plmnOverride numeric="21803"  plmn="Eronet BA" />
+    <plmnOverride numeric="21805" plmn="Mtel BA"/>
+    <plmnOverride numeric="21890" plmn="BH Telecom"/>
+    <plmnOverride numeric="21901" plmn="Telekom HR"/>
+    <plmnOverride numeric="21902" plmn="Tele2 HR"/>
+    <plmnOverride numeric="21910"  plmn="VIPnet HR" />
+    <plmnOverride numeric="22001"  plmn="Telenor RS"/>
+    <plmnOverride numeric="22003"  plmn="Telekom RS"/>
+    <plmnOverride numeric="22005"  plmn="Vipmobile RS"/>
+    <plmnOverride numeric="22601" plmn="Vodafone RO"/>
+    <plmnOverride numeric="22603" plmn="Telekom RO"/>
+    <plmnOverride numeric="22610" plmn="Orange RO"/>
+    <plmnOverride numeric="22801" plmn="Swisscom CH"/>
+    <plmnOverride numeric="22802" plmn="Sunrise CH"/>
+    <plmnOverride numeric="22803"  plmn="Salt CH" />
+    <plmnOverride numeric="22808"  plmn="Tele2 CH" />
+    <plmnOverride numeric="22812"  plmn="Sunrise CH" />
+    <plmnOverride numeric="22853"  plmn="UPC CH"/>
+    <plmnOverride numeric="23001"  plmn="T-Mobile CZ" />
+    <plmnOverride numeric="23002"  plmn="O2 CZ"/>
+    <plmnOverride numeric="23003"  plmn="Vodafone CZ"/>
+    <plmnOverride numeric="23101"  plmn="Orange SK" />
+    <plmnOverride numeric="23102"  plmn="Telekom SK" />
+    <plmnOverride numeric="23106"  plmn="O2 SK"/>
+    <plmnOverride numeric="24601"  plmn="Omnitel LT" />
+    <plmnOverride numeric="24602"  plmn="Bite LT" />
+    <plmnOverride numeric="24603"  plmn="Tele2 LT"/>
+    <plmnOverride numeric="24701"  plmn="LMT LV"/>
+    <plmnOverride numeric="24702"  plmn="Tele2 LV"/>
+    <plmnOverride numeric="24705"  plmn="Bite LV"/>
+    <plmnOverride numeric="24801"  plmn="EMT EE"/>
+    <plmnOverride numeric="24802"  plmn="Elisa EE"/>
+    <plmnOverride numeric="24803"  plmn="Tele2 EE"/>
+    <plmnOverride numeric="25901"  plmn="Orange MD" />
+    <plmnOverride numeric="26002" plmn="T-Mobile PL"/>
+    <plmnOverride numeric="26006" plmn="Play PL"/>
+    <plmnOverride numeric="26201" plmn="T-Mobile DE"/>
+    <plmnOverride numeric="26202" plmn="Vodafone DE"/>
+    <plmnOverride numeric="26207" plmn="o2-de"/>
+    <plmnOverride numeric="26801" plmn="Vodafone PT"/>
+    <plmnOverride numeric="26803" plmn="NOS"/>
+    <plmnOverride numeric="26806" plmn="MEO"/>
+    <plmnOverride numeric="27001" plmn="Post LU"/>
+    <plmnOverride numeric="27077" plmn="Tango LU"/>
+    <plmnOverride numeric="27099" plmn="Orange LU"/>
+    <plmnOverride numeric="27601"  plmn="Telekom AL" />
+    <plmnOverride numeric="27602" plmn="Vodafone AL"/>
+    <plmnOverride numeric="27801" plmn="Vodafone MT"/>
+    <plmnOverride numeric="27821"  plmn="Go MT" />
+    <plmnOverride numeric="27877" plmn="Melita MT"/>
+    <plmnOverride numeric="28401" plmn="Mtel"/>
+    <plmnOverride numeric="28403"  plmn="Vivacom BG" />
+    <plmnOverride numeric="28405"  plmn="Telenor BG" />
+    <plmnOverride numeric="29340" plmn="Simobil SI"/>
+    <plmnOverride numeric="29341" plmn="Telekom SI"/>
+    <plmnOverride numeric="29364" plmn="T2 SI"/>
+    <plmnOverride numeric="29370" plmn="Telemach SI"/>
+    <plmnOverride numeric="29401" plmn="Telekom MK"/>
+    <plmnOverride numeric="29402" plmn="One MK"/>
+    <plmnOverride numeric="29403" plmn="Vip MK"/>
+    <plmnOverride numeric="29701" plmn="Telenor ME"/>
+    <plmnOverride numeric="29702" plmn="Telekom ME"/>
+    <plmnOverride numeric="29703"  plmn="Mtel ME"/>
+</plmnOverrides>

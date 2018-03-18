@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<monitor type="POWER0001" enable="true" delay="600000" param1="1000">
+</monitor>
+
+<monitor type="POWER0002" enable="false">
+</monitor>
+
+<monitor type="POWER0003" enable="true" delay="0" param1="24" param2="1800000">
+</monitor>
+
+<monitor type="POWER0004" enable="true" delay="0" param1="2" param2="1800000">
+</monitor>
+
+<monitor type="POWER0005" enable="true" delay="0" param1="18" param2="1800000">
+</monitor>
+
+<monitor type="POWER0006" enable="true" param1="10">
+</monitor>
+
+<monitor type="POWER0007" enable="true" delay="10800000" param1="1800000" param2="12">
+</monitor>
+
+<monitor type="POWER0008" enable="false" delay="0" param1="6" param2="25">
+</monitor>
+
+<monitor type="POWER0009" enable="true" delay="0" param1="1800000">
+</monitor>
