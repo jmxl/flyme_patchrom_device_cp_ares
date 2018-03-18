@@ -8,4 +8,4 @@
 /oem-services.jar.out
 /telephony-common.jar.out
 /wifi-service.jar.out
-/vendor
+/vendor/system
