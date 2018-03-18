@@ -1,0 +1,102 @@
+# Zeusis product specific init rc configs go here
+#wade add
+    chown system system /sys/class/leds/led:switch/brightness
+    chown system system /sys/class/leds/led:flash_0/brightness
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:flash_1/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chmod 0660 /sys/class/leds/led:switch/brightness
+    chmod 0660 /sys/class/leds/led:flash_0/brightness
+    chmod 0660 /sys/class/leds/led:torch_0/brightness
+    chmod 0660 /sys/class/leds/led:flash_1/brightness
+    chmod 0660 /sys/class/leds/led:torch_1/brightness
+    chmod 0666 /dev/ttyHSL1
+service set_wifi_mac /system/bin/set_wifi_mac
+    class main
+    user root
+    oneshot
+    disabled
+
+#on property:vold.decrypt=trigger_restart_framework
+on property:sys.boot_completed=1
+    start set_wifi_mac
+
+service gx_fpd /system/bin/gx_fpd
+    class late_start
+    user system
+    group system
+
+on boot
+    chown system system /sys/class/leds/led:switch/brightness
+    chown system system /sys/class/leds/led:flash_0/brightness
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:flash_1/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chmod 0660 /sys/class/leds/led:switch/brightness
+    chmod 0660 /sys/class/leds/led:flash_0/brightness
+    chmod 0660 /sys/class/leds/led:torch_0/brightness
+    chmod 0660 /sys/class/leds/led:flash_1/brightness
+    chmod 0660 /sys/class/leds/led:torch_1/brightness
+    chmod 0666 /dev/ttyHSL1
+
+chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
+    
+    chown system system /sys/class/power_supply/battery/system_scn
+    chmod 0660 /sys/class/power_supply/battery/system_scn
+	
+# add by letv for reduced power consumption when black and call running begin
+#on property:sys.usb.config.powerlimit=1
+#    write /sys/class/power_supply/le_ab/le_black_call_mode 1
+
+#on property:sys.usb.config.powerlimit=0
+#    write /sys/class/power_supply/le_ab/le_black_call_mode 0
+# add by letv for reduced power consumption when black and call running end
+
+# add by letv for reduced power rate when normal charge be selected begin
+#on property:persist.sys.le_fast_chrg_enable=1
+#    write /sys/class/power_supply/le_ab/le_quick_charge_mode 0
+
+#on property:persist.sys.le_fast_chrg_enable=0
+#    write /sys/class/power_supply/le_ab/le_quick_charge_mode 1
+# add by letv for reduced power rate when normal charge be selected end
+
+on post-fs-data
+    rm /data/cust
+    symlink /system/cust /data/cust
+
+#  sys.sysctl.led.brightness
+on property:sys.sysctl.led.brightness=*
+   write /sys/class/leds/button-backlight/brightness ${sys.sysctl.led.brightness}
+
+#  sys.sysctl.led.red
+on property:sys.sysctl.led.red=*
+   write /sys/class/leds/red/brightness ${sys.sysctl.led.red}
+
+#  sys.sysctl.led.green
+on property:sys.sysctl.led.green=*
+   write /sys/class/leds/green/brightness ${sys.sysctl.led.green}
+
+#  sys.sysctl.led.blue
+on property:sys.sysctl.led.blue=*
+   write /sys/class/leds/blue/brightness ${sys.sysctl.led.blue}
+
+#  sys.sysctl.led.swith
+on property:sys.sysctl.led.switch=*
+   write /sys/class/leds/led:switch/brightness ${sys.sysctl.led.switch}
+
+#  sys.sysctl.led.light0
+on property:sys.sysctl.led.light0=*
+   write /sys/class/leds/led:flash_0/brightness ${sys.sysctl.led.light0}
+
+#  sys.sysctl.led.light1
+on property:sys.sysctl.led.light1=*
+   write /sys/class/leds/led:flash_1/brightness ${sys.sysctl.led.light1}
+
+#  sys.sysctl.led.torch0
+on property:sys.sysctl.led.torch0=*
+   write /sys/class/leds/led:torch_0/brightness ${sys.sysctl.led.torch0}
+
+#  sys.sysctl.led.torch1
+on property:sys.sysctl.led.torch1=*
+   write /sys/class/leds/led:torch_1/brightness ${sys.sysctl.led.torch1}

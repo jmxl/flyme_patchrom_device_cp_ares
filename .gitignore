@@ -1,2 +1,11 @@
 /out/*
 /JUI_C105-E0_7.1_2017.09.15.zip
+/com.qti.dpmframework.jar.out
+/framework.jar.out
+/framework-res
+/qti-telephony-common.jar.out
+/services.jar.out
+/oem-services.jar.out
+/telephony-common.jar.out
+/wifi-service.jar.out
+/vendor

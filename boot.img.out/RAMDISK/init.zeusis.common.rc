@@ -1,0 +1,285 @@
+# Zeusis platform common init rc configs go here
+on boot
+    #zeusis hawkeye devices
+    chmod 0664 /dev/heye_bms_svr
+    chmod 0664 /dev/heye_bms_clt
+    chmod 0664 /dev/heye_pms_svr
+    chmod 0664 /dev/heye_pms_clt
+    chmod 0664 /dev/heye_ems_svr
+    chmod 0664 /dev/heye_ems_clt
+
+    #charger node
+    chown system system /sys/class/power_supply/battery/charging_enabled
+    chmod 0664 /sys/class/power_supply/battery/charging_enabled
+    chown system system /sys/class/power_supply/battery/battery_charging_enabled
+    chmod 0664 /sys/class/power_supply/battery/battery_charging_enabled
+
+#power optimize service
+service power-engine /system/bin/power-engine
+   class late_start
+   user root
+   group root
+
+#For atrace dump of JunkService
+service atrace_on /system/bin/atrace -b 4096 gfx input view webview wm am sm audio video camera hal res dalvik power pm ss sched freq idle disk load --async_start
+    class main
+    user root
+    group system
+    oneshot
+    disabled
+
+service recoverylog /system/bin/recoverylog_upload
+    class main
+    user root
+    group system
+    oneshot
+    disabled
+    seclabel u:r:recoverylog:s0
+
+service atrace_off /system/bin/atrace -b 4096 gfx input view webview wm am sm audio video camera hal res dalvik power pm ss sched freq idle disk load --async_stop
+    class main
+    user root
+    group system
+    oneshot
+    disabled
+
+#hawkeyecfg
+service hawkeyecfg /system/bin/hawkeyecfg --update
+    class main
+    user root
+    group system
+    oneshot
+    disabled
+
+on post-fs-data
+    mkdir /data/hawkeyecfg 0770 system system
+    mkdir /data/hawkeyecfg/beta 0770 system system
+    mkdir /data/hawkeyecfg/user 0770 system system
+    mkdir /data/hawkeyecfg/release 0770 system system
+    start hawkeyecfg
+
+on property:persist.sys.phone.beta.state=true
+    start hawkeyecfg
+
+on property:persist.sys.phone.beta.state=false
+    start hawkeyecfg
+#hawkeyecfg
+
+on property:sys.boot_completed=1 && property:persist.sys.phone.beta.state=true
+    start atrace_on
+
+on property:sys.boot_completed=1
+    start recoverylog
+
+#offline log begin----->>
+on post-fs-data
+    mkdir /data/zslogs 0755 log log
+    setprop init.zslogd.start 0
+
+# ffbm boot mode
+on property:ro.bootmode=ffbm-00
+    setprop init.zslogd.start 1
+
+on property:ro.bootmode=ffbm-01
+    setprop init.zslogd.start 1
+
+on property:ro.bootmode=ffbm-02
+    setprop init.zslogd.start 1
+
+#normal boot mode
+on property:sys.boot_completed=1
+    setprop init.zslogd.start 1
+
+#only disable offline log when factoryflag is true of user version
+on property:ro.build.type=user && property:persist.zeusis.sys.factoryflag=T
+    setprop persist.sys.offlinelog 0
+
+on property:persist.sys.offlinelog=0
+    setprop persist.zslogd.logcatd 0
+    setprop persist.zslogd.battd 0
+    setprop persist.zslogd.tcpdumpd 0
+    setprop persist.zslogd.mdlogd 0
+    setprop persist.zslogd.gpslogd 0
+    setprop persist.zslogd.wlanlogd 0
+    setprop persist.zslogd.sensorlogd 0
+    setprop persist.zslogd.btlogd 0
+    setprop persist.sys.download_mode 0
+    setprop persist.sys.ssr.enable_ramdumps 0
+
+#logcat on/off
+on property:persist.zslogd.logcatd=zs_logcatd && property:persist.sys.offlinelog=1 && property:init.zslogd.start=1
+    # all exec/services are called with umask(077), so no gain beyond 0700
+    mkdir /data/zslogs/logcat 0700 system system
+    start zs_logcatd
+
+on property:persist.zslogd.logcatd=0
+    stop zs_logcatd
+
+#battlog on /off
+on property:persist.zslogd.battd=zs_battd && property:persist.sys.offlinelog=1 && property:init.zslogd.start=1
+    mkdir /data/zslogs/battery 0700 system system
+    start zs_battd
+
+on property:persist.zslogd.battd=0
+    stop zs_battd
+
+#netlog on/off
+on property:persist.zslogd.tcpdumpd=zs_tcpdumpd && property:persist.sys.offlinelog=1 && property:init.zslogd.start=1
+    mkdir /data/zslogs/tcpdump 0700 system system
+    start zs_tcpdumpd
+
+on property:persist.zslogd.tcpdumpd=0
+    stop zs_tcpdumpd
+
+#modem log on/off
+on property:persist.zslogd.mdlogd=zs_mdlogd && property:persist.sys.offlinelog=1 && property:init.zslogd.start=1
+    mkdir /data/zslogs/modem 0700 system system
+    wait /sdcard
+    setprop persist.sys.diag.mdlog 1
+    setprop persist.sys.diag.mdlog.once 1
+    start zs_mdlogd
+
+on property:persist.zslogd.mdlogd=0
+    start zs_stopmdiag
+
+on property:persist.zslogd.mdlogd=0 && property:persist.zslogd.gpslogd=0 && property:persist.zslogd.wlanlogd=0
+    setprop persist.sys.diag.mdlog 0
+
+#gps log on/off
+on property:persist.zslogd.gpslogd=zs_gpslogd && property:persist.sys.offlinelog=1 && property:init.zslogd.start=1
+    mkdir /data/zslogs/gps 0700 system system
+    wait /sdcard
+    setprop persist.sys.diag.mdlog 1
+    setprop persist.sys.diag.mdlog.once 1
+    start zs_gpslogd
+
+on property:persist.zslogd.gpslogd=0
+    start zs_stopmdiag
+
+#wlan log on/off
+on property:persist.zslogd.wlanlogd=zs_wlanlogd && property:persist.sys.offlinelog=1 && property:init.zslogd.start=1
+    mkdir /data/zslogs/wlan 0700 system system
+    wait /sdcard
+    setprop persist.sys.diag.mdlog 1
+    setprop persist.sys.diag.mdlog.once 1
+    start zs_wlanlogd
+
+on property:persist.zslogd.wlanlogd=0
+    start zs_stopmdiag
+
+#sensor log on/off
+on property:persist.zslogd.sensorlogd=zs_sensorlogd && property:persist.sys.offlinelog=1 && property:init.zslogd.start=1
+    mkdir /data/zslogs/sensor 0700 system system
+    wait /sdcard
+    setprop persist.sys.diag.mdlog 1
+    setprop persist.sys.diag.mdlog.once 1
+    start zs_sensorlogd
+
+on property:persist.zslogd.sensorlogd=0
+    start zs_stopmdiag
+
+#bt log on/off
+on property:persist.zslogd.btlogd=zs_btlogd && property:persist.sys.offlinelog=1 && property:init.zslogd.start=1
+    mkdir /data/zslogs/bt 0700 bluetooth bluetooth
+    chmod 0777 /data/zslogs/bt
+    write /data/zslogs/bt/btsnoop_hci.log 1
+    chmod 0777 /data/zslogs/bt/btsnoop_hci.log
+
+
+#service of logcat
+service zs_logcatd /system/bin/logcat -b all -v threadtime -v usec -v printable -D -f /data/zslogs/logcat/logcat -r 4096 -n 768
+    class late_start
+    user system
+    group system
+    disabled
+    seclabel u:r:zs_logcatd:s0
+    writepid /dev/cpuset/system-background/tasks
+
+#service of batlog
+service zs_battd /system/bin/battd
+    class late_start
+    user system
+    group system
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+#service of netlog
+service zs_tcpdumpd /system/xbin/tcpdump -i any -nnXSs 0 -C 128 -W 4 -Z system -w /data/zslogs/tcpdump/tcpdump.cap
+    class late_start
+    user root
+    group root
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+#service of stop diag_mdlog
+service zs_stopmdiag /system/bin/diag_mdlog -k
+    class late_start
+    user root
+    group root
+    oneshot
+    disabled
+
+#service of diag_mdlog for modem log
+service zs_mdlogd /system/bin/diag_mdlog -bce -f /system/etc/qxdm/modem.cfg -s 128 -n 16 -o /data/zslogs/modem
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
+    writepid /dev/cpuset/system-background/tasks
+
+#service of diag_mdlog for gps log
+service zs_gpslogd /system/bin/diag_mdlog -bce -f /system/etc/qxdm/gps.cfg -s 128 -n 100 -o /data/zslogs/gps
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
+    writepid /dev/cpuset/system-background/tasks
+
+#service of diag_mdlog for wlan log
+service zs_wlanlogd /system/bin/diag_mdlog -bce -f /system/etc/qxdm/wlan.cfg -s 128 -n 16 -o /data/zslogs/wlan
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
+    writepid /dev/cpuset/system-background/tasks
+
+#service of diag_mdlog for sensor log
+service zs_sensorlogd /system/bin/diag_mdlog -bce -f /system/etc/qxdm/sensor.cfg -s 128 -n 16 -o /data/zslogs/sensor
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
+    writepid /dev/cpuset/system-background/tasks
+#<<-----offline log end
+
+#POL-408: Add Bin bin.zhao@zeusis 2016/11/25 Zeusis_Begin
+service modemservice /system/bin/modemservice
+    class main
+    socket msd stream 660 root system
+    socket msd-debug stream 660 root system
+    user root
+    group system radio cache inet misc audio sdcard_r sdcard_rw qcom_diag diag log
+#POL-408: Add Bin bin.zhao@zeusis 2016/11/25 End
+
+
+#Add custom fearture
+service custd /system/bin/cust_daemon
+    class main
+    oneshot
+    disabled
+
+service oeminfod /system/bin/oeminfo_daemon
+    class main
+    user root
+
+on early-init
+    mkdir /cust 0771 system system
+
+
+
+on property:ro.boot.factoryimg=true
+    setprop persist.sys.strictmode.disable true
