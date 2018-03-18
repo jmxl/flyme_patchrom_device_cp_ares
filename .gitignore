@@ -5,8 +5,6 @@
 /vendor/system/priv-app
 /vendor/system/vendor
 /vendor/system/usr
-/vendor/system/lib
-/vendor/system/lib64
 /vendor/system/framework
 /vendor/system/presetapp
 /vendor/system/fonts
