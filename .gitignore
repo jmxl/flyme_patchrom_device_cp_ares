@@ -1,7 +1,6 @@
 /out/*
-/vendor/system/app/P*
 /vendor/system/app/S*
 /vendor/system/app/G*
-/vendor/system/app/C*
 /vendor/system/app/W*
+/vendor/system/app/C*
 
