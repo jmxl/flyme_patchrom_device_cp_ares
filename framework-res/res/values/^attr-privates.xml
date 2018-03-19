@@ -383,4 +383,5 @@
     <attr name="leBlurBlendMode2">
         <enum name="normal" value="0" />
     </attr>
+    <attr name="needAccessControl" format="boolean" />
 </resources>

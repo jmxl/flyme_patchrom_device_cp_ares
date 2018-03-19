@@ -2522,6 +2522,8 @@
     <public type="id" name="websearch" id="0x0102117b" />
     <public type="id" name="find_prev" id="0x0102117c" />
     <public type="id" name="find_next" id="0x0102117d" />
+    <public type="id" name="fontChange" id="0x0102117e" />
+    <public type="id" name="themeChange" id="0x0102117f" />
     <public type="id" name="APKTOOL_DUMMY_32b" id="0x0102032b" />
     <public type="id" name="APKTOOL_DUMMY_32c" id="0x0102032c" />
     <public type="id" name="APKTOOL_DUMMY_32d" id="0x0102032d" />
@@ -17279,4 +17281,5 @@
     <public type="^attr-private" name="leBlurBlendColor2" id="0x0116013c" />
     <public type="^attr-private" name="leBlurBlendMode1" id="0x0116013d" />
     <public type="^attr-private" name="leBlurBlendMode2" id="0x0116013e" />
+    <public type="^attr-private" name="needAccessControl" id="0x0116013f" />
 </resources>
