@@ -152,6 +152,8 @@
 /mnt/user(/.*)?	u:object_r:mnt_user_file:s0
 /mnt/runtime(/.*)?	u:object_r:storage_file:s0
 /storage(/.*)?	u:object_r:storage_file:s0
+/dev/socket/flymed	u:object_r:flymed_socket:s0
+/system/bin/flymed	u:object_r:flymed_exec:s0
 /dsp(/.*)?	u:object_r:adsprpcd_file:s0
 /cust(/.*)?	u:object_r:cust_file:s0
 /dev/sg.*	u:object_r:sg_device:s0
