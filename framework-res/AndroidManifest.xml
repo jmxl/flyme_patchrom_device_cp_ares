@@ -855,6 +855,13 @@
     <permission android:name="com.freeze.permission.FORCE_FREEZE_PACKAGES" android:protectionLevel="signatureOrSystem"/>
     <permission android:name="com.freeze.permission.FORCE_UNFREEZE_PACKAGES" android:protectionLevel="signatureOrSystem"/>
     <application android:allowClearUserData="false" android:backupAgent="com.android.server.backup.SystemBackupAgent" android:defaultToDeviceProtectedStorage="true" android:directBootAware="true" android:hasCode="false" android:icon="@drawable/ic_launcher_android" android:killAfterRestore="false" android:label="@string/android_system_label" android:persistent="true" android:process="system" android:supportsRtl="true" android:theme="@style/Theme.DeviceDefault.Light.DarkActionBar">
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:documentLaunchMode="never" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true" android:name="com.android.internal.app.MzChooserActivity" android:process=":ui" android:relinquishTaskIdentity="true" android:theme="@style/Theme.DeviceDefault.Resolver">
+            <intent-filter>
+                <action android:name="android.intent.action.CHOOSER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.VOICE"/>
+            </intent-filter>
+        </activity>
         <activity android:excludeFromRecents="true" android:exported="true" android:finishOnCloseSystemDialogs="true" android:label="@string/user_owner_label" android:name="com.android.internal.app.IntentForwarderActivity" android:theme="@style/Theme.NoDisplay"/>
         <activity-alias android:exported="true" android:label="@string/user_owner_label" android:name="com.android.internal.app.ForwardIntentToParent" android:targetActivity="com.android.internal.app.IntentForwarderActivity"/>
         <activity-alias android:exported="true" android:icon="@drawable/ic_corp_icon" android:label="@string/managed_profile_label" android:name="com.android.internal.app.ForwardIntentToManagedProfile" android:targetActivity="com.android.internal.app.IntentForwarderActivity"/>
@@ -960,5 +967,17 @@
         <service android:name="com.android.server.backup.KeyValueBackupJob" android:permission="android.permission.BIND_JOB_SERVICE"/>
         <service android:name="com.android.server.content.SyncJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
         <service android:exported="true" android:name="com.android.server.pm.BackgroundDexOptService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="false" android:name="com.android.internal.app.RecommendActivity" android:process=":ui" android:theme="@style/Theme.Holo.Dialog.Alert">
+            <intent-filter>
+                <action android:name="android.intent.action.RECOMMEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.meizu.app.AccessApplication" android:needAccessControl="false" android:screenOrientation="portrait" android:theme="@style/Theme.Wallpaper.NoTitleBar.Fullscreen" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.content.pm.CONFIRM_ACCESS_APPCATONS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
