@@ -385,6 +385,8 @@
 
     iput-object v0, p0, Landroid/app/Activity;->mExitTransitionListener:Landroid/app/SharedElementCallback;
 
+    invoke-direct/range {p0 .. p0}, Landroid/app/Activity;->initFlymeExtraFields()V
+
     iput-boolean v3, p0, Landroid/app/Activity;->mShouldChangeStatusBarColor:Z
 
     new-instance v0, Ljava/lang/Object;
@@ -11240,6 +11242,19 @@
     .param p2, "options"    # Landroid/os/Bundle;
 
     .prologue
+    
+    invoke-static/range {p0 .. p1}, Landroid/app/Activity$FlymeInjector;->checkFlymeAccessControl(Landroid/app/Activity;Landroid/content/Intent;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    invoke-static/range {p0 .. p2}, Landroid/app/Activity$FlymeInjector;->startFlymeActivity(Landroid/app/Activity;Landroid/content/Intent;Landroid/os/Bundle;)V
+
+    return-void
+
+    :cond_flyme_0
+    
     const/4 v2, -0x1
 
     new-instance v0, Landroid/util/PerformanceManager;
