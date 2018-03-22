@@ -245,6 +245,19 @@
 
 .field public static final ZS_TEXTBOOM_SERVICE:Ljava/lang/String; = "zs_textboom"
 
+# instance fields
+.field private mFlymeColorThemeCacheMap:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
 .method public constructor <init>()V
