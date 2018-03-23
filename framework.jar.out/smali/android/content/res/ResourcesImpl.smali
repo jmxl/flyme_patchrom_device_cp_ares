@@ -1504,7 +1504,7 @@
 
     move/from16 v2, v22
 
-    invoke-virtual {v0, v1, v10, v2}, Landroid/content/res/AssetManager;->openNonAsset(ILjava/lang/String;I)Ljava/io/InputStream;
+    /range {v0 .. v2}, Landroid/content/res/AssetManager;->openNonAsset(ILjava/lang/String;I)Ljava/io/InputStream;
 
     move-result-object v13
 
@@ -1518,7 +1518,7 @@
 
     move-object/from16 v2, v20
 
-    invoke-static {v0, v1, v13, v10, v2}, Landroid/graphics/drawable/Drawable;->createFromResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1, v13, v10, v2}, Landroid/content/res/ResourcesImpl$FlymeInjector;->createFromResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v7
 
@@ -4754,6 +4754,8 @@
     move/from16 v0, v22
 
     invoke-virtual {v2, v0}, Landroid/content/res/ConfigurationBoundResourceCache;->onConfigurationChange(I)V
+
+    invoke-direct/range {p0 .. p0}, Landroid/content/res/ResourcesImpl;->clearCachesByFlymeChange()V
 
     move-object/from16 v0, p0
 
