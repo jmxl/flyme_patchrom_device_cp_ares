@@ -3140,7 +3140,11 @@
 
     sub-int v4, v7, v8
 
-    if-eqz v4, :cond_18
+    invoke-static {p0, p1, v4}, Landroid/content/res/Configuration$FlymeInjector;->compareTo(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
+
+    move-result v4
+
+    #if-eqz v4, :cond_18
 
     .line 1437
     return v4
@@ -3511,21 +3515,26 @@
 
     .line 1214
     :cond_11
-    iget v2, p0, Landroid/content/res/Configuration;->zsTheme:I
+    
+    invoke-static {p0, p1, v0}, Landroid/content/res/Configuration$FlymeInjector;->diff(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
 
-    iget v3, p1, Landroid/content/res/Configuration;->zsTheme:I
+    move-result v0
+    
+    #iget v2, p0, Landroid/content/res/Configuration;->zsTheme:I
 
-    if-eq v2, v3, :cond_12
+    #iget v3, p1, Landroid/content/res/Configuration;->zsTheme:I
 
-    const/high16 v2, -0x80000000
+    #if-eq v2, v3, :cond_12
 
-    or-int/2addr v0, v2
+    #const/high16 v2, -0x80000000
 
-    :cond_12
+    #or-int/2addr v0, v2
+
+    #:cond_12
     return v0
 
     .end local v1    # "deltaScreenLayoutDir":I
-    :cond_13
+    :cond_12
     or-int/lit8 v0, v0, 0x4
 
     or-int/lit16 v0, v0, 0x2000
@@ -3756,11 +3765,15 @@
 
     add-int v0, v1, v2
 
-    mul-int/lit8 v1, v0, 0x1f
+    invoke-static {p0, v0}, Landroid/content/res/Configuration$FlymeInjector;->hashCode(Landroid/content/res/Configuration;I)I
 
-    iget v2, p0, Landroid/content/res/Configuration;->zsTheme:I
+    move-result v0
 
-    add-int v0, v1, v2
+    #mul-int/lit8 v1, v0, 0x1f
+
+    #iget v2, p0, Landroid/content/res/Configuration;->zsTheme:I
+
+    #add-int v0, v1, v2
 
     return v0
 .end method
@@ -4085,11 +4098,13 @@
 
     iput v3, p0, Landroid/content/res/Configuration;->seq:I
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    invoke-static/range {p0 .. p1}, Landroid/content/res/Configuration$FlymeInjector;->readFromParcel(Landroid/content/res/Configuration;Landroid/os/Parcel;)V
 
-    move-result v3
+    #invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    iput v3, p0, Landroid/content/res/Configuration;->zsTheme:I
+    #move-result v3
+
+    #iput v3, p0, Landroid/content/res/Configuration;->zsTheme:I
 
     return-void
 
@@ -4307,10 +4322,12 @@
     iget v0, p1, Landroid/content/res/Configuration;->seq:I
 
     iput v0, p0, Landroid/content/res/Configuration;->seq:I
+    
+    invoke-static/range {p0 .. p1}, Landroid/content/res/Configuration$FlymeInjector;->initFlymeExtraFields(Landroid/content/res/Configuration;Landroid/content/res/Configuration;)V
 
-    iget v0, p1, Landroid/content/res/Configuration;->zsTheme:I
+    #iget v0, p1, Landroid/content/res/Configuration;->zsTheme:I
 
-    iput v0, p0, Landroid/content/res/Configuration;->zsTheme:I
+    #iput v0, p0, Landroid/content/res/Configuration;->zsTheme:I
 
     return-void
 
@@ -4386,7 +4403,9 @@
 
     iput v1, p0, Landroid/content/res/Configuration;->seq:I
 
-    iput v1, p0, Landroid/content/res/Configuration;->zsTheme:I
+    invoke-static/range {p0 .. p0}, Landroid/content/res/Configuration$FlymeInjector;->initFlymeExtraFields(Landroid/content/res/Configuration;)V
+
+    #iput v1, p0, Landroid/content/res/Configuration;->zsTheme:I
 
     return-void
 .end method
@@ -5843,25 +5862,10 @@
 
     .line 1097
     :cond_18
-    iget v2, p1, Landroid/content/res/Configuration;->zsTheme:I
+    invoke-static {p0, p1, v0}, Landroid/content/res/Configuration$FlymeInjector;->updateFrom(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
 
-    if-eqz v2, :cond_19
-
-    iget v2, p0, Landroid/content/res/Configuration;->zsTheme:I
-
-    iget v3, p1, Landroid/content/res/Configuration;->zsTheme:I
-
-    if-eq v2, v3, :cond_19
-
-    const/high16 v2, -0x80000000
-
-    or-int/2addr v0, v2
-
-    iget v2, p1, Landroid/content/res/Configuration;->zsTheme:I
-
-    iput v2, p0, Landroid/content/res/Configuration;->zsTheme:I
-
-    :cond_19
+    move-result v0
+        
     return v0
 
     .end local v1    # "deltaScreenLayoutDir":I
@@ -6053,9 +6057,11 @@
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget v3, p0, Landroid/content/res/Configuration;->zsTheme:I
+    invoke-static/range {p0 .. p2}, Landroid/content/res/Configuration$FlymeInjector;->writeToParcel(Landroid/content/res/Configuration;Landroid/os/Parcel;I)V
 
-    invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
+#    iget v3, p0, Landroid/content/res/Configuration;->zsTheme:I
+
+#    invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
     return-void
 
