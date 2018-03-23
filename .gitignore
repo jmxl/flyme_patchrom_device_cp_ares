@@ -1,4 +1,4 @@
 /out/*
 /vendor/system/app/WebViewGoogle/WebViewGoogle.apk
 /vendor/system/app/Chrome/Chrome.apk
-
+/autopatch
