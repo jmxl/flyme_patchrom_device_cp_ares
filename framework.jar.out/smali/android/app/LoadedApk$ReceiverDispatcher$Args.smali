@@ -234,18 +234,18 @@
     .line 1128
     .local v0, "beginTime":J
     iget-object v11, p0, Landroid/app/LoadedApk$ReceiverDispatcher$Args;->this$1:Landroid/app/LoadedApk$ReceiverDispatcher;
-
-    iget-object v11, v11, Landroid/app/LoadedApk$ReceiverDispatcher;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v10, v11, v7}, Landroid/content/BroadcastReceiver;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-
+    
     invoke-static {v7, v11}, Landroid/app/LoadedApk$FlymeInjector;->isFlymeRejectReceive(Landroid/content/Intent;Landroid/app/LoadedApk$ReceiverDispatcher;)Z
 
     move-result v11
 
     if-nez v11, :cond_flyme_0
 
-    iget-object v6, p0, Landroid/app/LoadedApk$ReceiverDispatcher$Args;->this$1:Landroid/app/LoadedApk$ReceiverDispatcher;
+    iget-object v11, p0, Landroid/app/LoadedApk$ReceiverDispatcher$Args;->this$1:Landroid/app/LoadedApk$ReceiverDispatcher;
+    
+    iget-object v11, v11, Landroid/app/LoadedApk$ReceiverDispatcher;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v10, v11, v7}, Landroid/content/BroadcastReceiver;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
 
     .line 1129
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J

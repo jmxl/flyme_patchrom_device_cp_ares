@@ -47,7 +47,7 @@ vendor_remove_dirs := presetapp media/journeyui-theme/icons_1080p_1
 # The default value is nothing.
 # You can configure the file name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-vendor_remove_files := recovery-from-boot.bak etc/CoolpadInstall.iso
+vendor_remove_files := recovery-from-boot.bak etc/CoolpadInstall.iso etc/recovery-resource.dat
 
 ##############################################################################
 # The value decides the vendor apk which you want to save in the vendor directory for the ota package.

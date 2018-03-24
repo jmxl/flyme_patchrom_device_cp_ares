@@ -1134,10 +1134,12 @@
     
     move-object/from16 v0, p0
     
-    invoke-direct {v0, v12, v5}, Landroid/app/Notification$Builder;->setFlymeViewPadding(Landroid/widget/RemoteViews;I)V
+    move-object/from16 v1, v16
+    
+    invoke-direct {v0, v12, v1}, Landroid/app/Notification$Builder;->setFlymeViewPadding(Landroid/widget/RemoteViews;I)V
     
     const v2, #android:id@actions#t
-
+    
     invoke-virtual {v11, v2, v12}, Landroid/widget/RemoteViews;->addView(ILandroid/widget/RemoteViews;)V
 
     add-int/lit8 v16, v16, 0x1
