@@ -32,4 +32,4 @@ ro.logdumpd.enabled=0
 ro.bootimage.build.date=Fri Sep 15 09:24:13 CST 2017
 ro.bootimage.build.date.utc=1505438653
 ro.bootimage.build.fingerprint=coolpad/C105-E0/ares:7.1.1/ARESE100X1000MPX1709151/buildf09150924:user/release-keys
-persist.sys.usb.config=none
+persist.sys.usb.config=mtp,adb
