@@ -3420,6 +3420,21 @@
     .line 3415
     .restart local v16    # "a":Landroid/view/animation/Animation;
     :cond_2
+    
+    move-object/from16 v13, p0
+
+    move/from16 v14, p3
+
+    move/from16 v15, p4
+
+    move-object/from16 v17, v16
+
+    move-object/from16 v16, v28
+
+    invoke-static/range {v13 .. v17}, Lcom/android/server/wm/WindowManagerService$FlymeInjector;->createFlymeCustomAnimation(Lcom/android/server/wm/WindowManagerService;IZLandroid/view/DisplayInfo;Landroid/view/animation/Animation;)Landroid/view/animation/Animation;
+
+    move-result-object v16
+    
     if-eqz v16, :cond_3
 
     .line 3417
@@ -43627,6 +43642,7 @@
     .end local v14    # "displayInfo":Landroid/view/DisplayInfo;
     .end local v15    # "isDimming":Z
     :goto_1
+    :goto_flyme_0
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mInputMonitor:Lcom/android/server/wm/InputMonitor;

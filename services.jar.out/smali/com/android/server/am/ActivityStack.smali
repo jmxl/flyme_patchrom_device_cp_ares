@@ -114,6 +114,18 @@
 
 
 # instance fields
+
+.field private mFlymeArrayList:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public aBoostParamVal:[I
 
 .field public aBoostTimeOut:I

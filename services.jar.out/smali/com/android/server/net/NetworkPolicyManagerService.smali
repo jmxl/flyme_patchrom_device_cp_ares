@@ -1312,7 +1312,13 @@
 .method private static buildNetworkOverLimitIntent(Landroid/net/NetworkTemplate;)Landroid/content/Intent;
     .locals 4
     .param p0, "template"    # Landroid/net/NetworkTemplate;
+    
+    invoke-static/range {p0 .. p0}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->buildFlymeNetworkOverLimitIntent(Landroid/net/NetworkTemplate;)Landroid/content/Intent;
 
+    move-result-object v0
+
+    return-object v0
+    
     .prologue
     .line 3719
     new-instance v0, Landroid/content/Intent;
@@ -1416,6 +1422,12 @@
 .method private static buildViewDataUsageIntent(Landroid/net/NetworkTemplate;)Landroid/content/Intent;
     .locals 4
     .param p0, "template"    # Landroid/net/NetworkTemplate;
+    
+    invoke-static/range {p0 .. p0}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->buildFlymeViewDataUsageIntent(Landroid/net/NetworkTemplate;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    return-object v0
 
     .prologue
     .line 3728
