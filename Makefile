@@ -79,7 +79,7 @@ vendor_modify_jars := com.qti.dpmframework framework oem-services qti-telephony-
 # The default value is nothing.
 # You can configure the board system directory path which relative to the system directory in the board release.
 #-----------------------------------------------------------------------------
-#board_saved_dirs := media/audio/ui
+board_saved_dirs := presetapp
 
 ##############################################################################
 # The value decides which board system file you want to save.
@@ -140,8 +140,8 @@ override_property += \
 # The default value is Nexus-6P_Unofficial.
 # You should configure the property according to your device and your ID with replace the "Nexus-6P_Unofficial".
 override_property += \
-    ro.flyme.romer=Unofficial \
-    ro.product.model_romer=C105_Unofficial
+    ro.flyme.romer=JMXL \
+    ro.product.model_romer=C105_JMXL
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.

@@ -3530,11 +3530,11 @@
 
     #or-int/2addr v0, v2
 
-    #:cond_12
+    :cond_12
     return v0
 
     .end local v1    # "deltaScreenLayoutDir":I
-    :cond_12
+    :cond_13
     or-int/lit8 v0, v0, 0x4
 
     or-int/lit16 v0, v0, 0x2000
@@ -5866,6 +5866,7 @@
 
     move-result v0
         
+    :cond_19
     return v0
 
     .end local v1    # "deltaScreenLayoutDir":I

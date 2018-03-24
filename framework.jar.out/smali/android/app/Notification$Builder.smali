@@ -1138,7 +1138,7 @@
     
     const v2, #android:id@actions#t
 
-    invoke-virtual {v11, v2, v16}, Landroid/widget/RemoteViews;->addView(ILandroid/widget/RemoteViews;)V
+    invoke-virtual {v11, v2, v12}, Landroid/widget/RemoteViews;->addView(ILandroid/widget/RemoteViews;)V
 
     add-int/lit8 v16, v16, 0x1
 

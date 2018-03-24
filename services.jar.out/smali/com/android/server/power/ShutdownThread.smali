@@ -327,7 +327,7 @@
 
     invoke-virtual {v0, v5}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgressNumberFormat(Ljava/lang/String;)V
 
-    invoke-virtual {v10 v3}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgressStyle(I)V
+    invoke-virtual {v10, v3}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgressStyle(I)V
 
     const v1, #android:string@reboot_to_update_prepare#t
 
@@ -337,7 +337,7 @@
 
     invoke-virtual {v0, v1}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    :goto_1
+    #:goto_1
     invoke-virtual {v0, v2}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setCancelable(Z)V
 
     invoke-virtual {v0},Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->getWindow()Landroid/view/Window;
