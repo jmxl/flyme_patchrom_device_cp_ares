@@ -5390,6 +5390,9 @@
     .param p5, "nowElapsed"    # J
 
     .prologue
+
+    invoke-static/range {p1 .. p1}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->applyFlymeOomAdjLocked(Lcom/android/server/am/ProcessRecord;)V
+
     const/16 v25, 0x1
 
     .local v25, "success":Z
@@ -40129,6 +40132,8 @@
 
     :cond_0
     if-eqz p1, :cond_10
+
+    invoke-static/range {p0 .. p1}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->updateConfigurationExt(Lcom/android/server/am/ActivityManagerService;Landroid/content/res/Configuration;)V
 
     new-instance v33, Landroid/content/res/Configuration;
 
@@ -81248,6 +81253,13 @@
     check-cast v21, Lcom/android/server/am/TaskRecord;
 
     .local v21, "tr":Lcom/android/server/am/TaskRecord;
+
+    invoke-static/range {v21 .. v21}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->isFlymeMayForbitPackage(Lcom/android/server/am/TaskRecord;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_flyme_0
+    
     move-object/from16 v0, v21
 
     iget v2, v0, Lcom/android/server/am/TaskRecord;->userId:I
@@ -124089,6 +124101,9 @@
     invoke-virtual {v5, v7}, Lcom/android/server/am/ActivityManagerService$MainHandler;->post(Ljava/lang/Runnable;)Z
 
     :cond_3d
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->updateFlymeOomAdjLocked(Lcom/android/server/am/ActivityManagerService;)V
+
     return-void
 
     .restart local v6    # "app":Lcom/android/server/am/ProcessRecord;

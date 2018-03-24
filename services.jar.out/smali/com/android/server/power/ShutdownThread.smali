@@ -305,15 +305,62 @@
     :goto_0
     sput-boolean v1, Lcom/android/server/power/ShutdownThread;->mRebootHasProgressBar:Z
 
+    const v1, #android:string@reboot_to_update_title#t
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
+
+    sget-boolean v1, Lcom/android/server/power/ShutdownThread;->mRebootHasProgressBar:Z
+
+    if-eqz v1, :cond_4
+
+    const/16 v1, 0x64
+
+    invoke-virtual {v0, v1}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setMax(I)V
+
+    invoke-virtual {v0, v2}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgress(I)V
+
+    invoke-virtual {v0, v2}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setIndeterminate(Z)V
+
+    invoke-virtual {v0, v5}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgressNumberFormat(Ljava/lang/String;)V
+
+    invoke-virtual {v10 v3}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgressStyle(I)V
+
+    const v1, #android:string@reboot_to_update_prepare#t
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
+
+    :goto_1
+    invoke-virtual {v0, v2}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setCancelable(Z)V
+
+    invoke-virtual {v0},Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v1
+
+    const/16 v1, 0x7d9
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setType(I)V
+
     .line 377
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/power/ShutdownThread$FlymeInjector;->showShutDownAnimation(Landroid/content/Context;)V
+
     :cond_2
     sget-object v1, Lcom/android/server/power/ShutdownThread;->sInstance:Lcom/android/server/power/ShutdownThread;
 
-    iput-object p0, v1, Lcom/android/server/power/ShutdownThread;->mContext:Landroid/content/Context;
+    iput-object v1, v2, Lcom/android/server/power/ShutdownThread;->mProgressDialog:Lcom/zeusis/widget/dialog/ZeusisProgressDialog;
 
     .line 378
     sget-object v2, Lcom/android/server/power/ShutdownThread;->sInstance:Lcom/android/server/power/ShutdownThread;
 
+    iput-object p0, v1, Lcom/android/server/power/ShutdownThread;->mContext:Landroid/content/Context;
     const-string/jumbo v1, "power"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
