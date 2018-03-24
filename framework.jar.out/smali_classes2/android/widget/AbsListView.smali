@@ -11981,6 +11981,8 @@
     invoke-virtual {p0}, Landroid/widget/AbsListView;->layoutChildren()V
 
     iput-boolean v5, p0, Landroid/widget/AbsListView;->mInLayout:Z
+    
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnLayout2(Landroid/widget/AbsListView;)V
 
     :cond_2
     return-void
