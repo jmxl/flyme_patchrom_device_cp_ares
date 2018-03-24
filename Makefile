@@ -40,7 +40,7 @@ vendor_modify_images := boot
 # The default value is app or pri-app which not need to configure.
 # You can configure the directory name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-#vendor_remove_dirs := vendor/operator/app
+vendor_remove_dirs := presetapp
 
 ##############################################################################
 # The value decides the file which you want to remove in the vendor directory for the ota package.
@@ -79,7 +79,7 @@ vendor_modify_jars := com.qti.dpmframework framework oem-services qti-telephony-
 # The default value is nothing.
 # You can configure the board system directory path which relative to the system directory in the board release.
 #-----------------------------------------------------------------------------
-board_saved_dirs := presetapp
+#board_saved_dirs := 
 
 ##############################################################################
 # The value decides which board system file you want to save.
