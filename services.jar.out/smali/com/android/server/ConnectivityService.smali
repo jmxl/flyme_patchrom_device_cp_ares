@@ -144,6 +144,8 @@
 # instance fields
 .field private isInstrusmentTestSet:Z
 
+.field private mFlymeWifiInterface:Ljava/lang/String;
+
 .field final mAvoidBadWifiTracker:Landroid/net/util/AvoidBadWifiTracker;
 
 .field private final mBlockedAppUids:Ljava/util/HashSet;

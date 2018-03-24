@@ -60,32 +60,3 @@
     return-void
 .end method
 
-
-
-
-
-
-
-
-.method private checkCallerIsSystemOrSystemUIOrSamePackage(Ljava/lang/String;)V
-    .locals 1
-    .param p1, "pkg"    # Ljava/lang/String;
-
-    .prologue
-    const-string v0, "Caller not system or systemui or same app"
-
-    invoke-direct {p0, p1, v0}, Lcom/android/server/notification/NotificationManagerService$5;->enforceSystemOrSystemUIOrSamePackage(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method protected checkCallerIsSystemOrSystemUI()V
-    .locals 1
-
-    .prologue
-    const-string v0, "Caller not system or systemui"
-
-    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$5;->enforceSystemOrSystemUI(Ljava/lang/String;)V
-
-    return-void
-.end method

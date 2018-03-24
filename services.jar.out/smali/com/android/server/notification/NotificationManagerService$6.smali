@@ -963,7 +963,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, p1, v0}, Lcom/android/server/notification/NotificationManagerService$6;->areNotificationsEnabledForPackage(Ljava/lang/String;I)Z
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/notification/NotificationManagerService$6;->checkCallerIsSystemOrSystemUIOrSamePackage(Ljava/lang/String;)V
 
     move-result v0
 
@@ -3748,7 +3748,7 @@
 
     .prologue
     .line 1535
-    invoke-static {}, Lcom/android/server/notification/NotificationManagerService;->-wrap17()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService$6;->checkCallerIsSystemOrSystemUI()V
 
     .line 1536
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -3805,7 +3805,7 @@
 
     .prologue
     .line 1548
-    invoke-static {}, Lcom/android/server/notification/NotificationManagerService;->-wrap17()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService$6;->checkCallerIsSystemOrSystemUI()V
 
     .line 1549
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -4832,7 +4832,7 @@
 
     .prologue
     .line 1501
-    invoke-static {}, Lcom/android/server/notification/NotificationManagerService;->-wrap17()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService$6;->checkCallerIsSystemOrSystemUI()V
 
     .line 1503
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -5256,7 +5256,7 @@
 
     .prologue
     .line 1541
-    invoke-static {}, Lcom/android/server/notification/NotificationManagerService;->-wrap17()V
+     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService$6;->checkCallerIsSystemOrSystemUI()V
 
     .line 1542
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -5417,4 +5417,27 @@
     move-result v0
 
     return v0
+.end method
+
+.method private checkCallerIsSystemOrSystemUIOrSamePackage(Ljava/lang/String;)V
+    .locals 1
+    .param p1, "pkg"    # Ljava/lang/String;
+
+    .prologue
+    const-string v0, "Caller not system or systemui or same app"
+
+    invoke-direct {p0, p1, v0}, Lcom/android/server/notification/NotificationManagerService$5;->enforceSystemOrSystemUIOrSamePackage(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method protected checkCallerIsSystemOrSystemUI()V
+    .locals 1
+
+    .prologue
+    const-string v0, "Caller not system or systemui"
+
+    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$5;->enforceSystemOrSystemUI(Ljava/lang/String;)V
+
+    return-void
 .end method

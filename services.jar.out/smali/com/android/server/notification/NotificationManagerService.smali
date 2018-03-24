@@ -12194,43 +12194,45 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/notification/NotificationManagerService;->publishLocalService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->initFlymeExtraFields()V
 
-    move-result-object v1
+    #invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
-    const-string v2, "carrier_config"
+    #move-result-object v1
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    #const-string v2, "carrier_config"
 
-    move-result-object v1
+    #invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    check-cast v1, Landroid/telephony/CarrierConfigManager;
+    #move-result-object v1
 
-    move-object/from16 v0, p0
+    #check-cast v1, Landroid/telephony/CarrierConfigManager;
 
-    iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mConfigManager:Landroid/telephony/CarrierConfigManager;
+    #move-object/from16 v0, p0
 
-    new-instance v1, Lcom/android/server/notification/ZsNotificationHelper;
+    #iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mConfigManager:Landroid/telephony/CarrierConfigManager;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
+    #new-instance v1, Lcom/android/server/notification/ZsNotificationHelper;
 
-    move-result-object v2
+    #invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
-    move-object/from16 v0, p0
+    #move-result-object v2
 
-    iget-object v3, v0, Lcom/android/server/notification/NotificationManagerService;->mRankingThread:Landroid/os/HandlerThread;
+    #move-object/from16 v0, p0
 
-    invoke-virtual {v3}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+    #iget-object v3, v0, Lcom/android/server/notification/NotificationManagerService;->mRankingThread:Landroid/os/HandlerThread;
 
-    move-result-object v3
+    #invoke-virtual {v3}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
-    const/4 v5, 0x0
+    #move-result-object v3
 
-    invoke-direct {v1, v2, v3, v5}, Lcom/android/server/notification/ZsNotificationHelper;-><init>(Landroid/content/Context;Landroid/os/Looper;Ljava/util/HashMap;)V
+    #const/4 v5, 0x0
 
-    move-object/from16 v0, p0
+    #invoke-direct {v1, v2, v3, v5}, Lcom/android/server/notification/ZsNotificationHelper;-><init>(Landroid/content/Context;Landroid/os/Looper;Ljava/util/HashMap;)V
 
-    iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mZsNotificationHelper:Lcom/android/server/notification/ZsNotificationHelper;
+    #move-object/from16 v0, p0
+
+    #iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mZsNotificationHelper:Lcom/android/server/notification/ZsNotificationHelper;
 
     return-void
 
