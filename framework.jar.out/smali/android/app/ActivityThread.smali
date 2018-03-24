@@ -10659,6 +10659,12 @@
 
     invoke-virtual {v14, v0}, Landroid/content/BroadcastReceiver;->setPendingResult(Landroid/content/BroadcastReceiver$PendingResult;)V
 
+    invoke-static {v0, v13}, Landroid/app/ActivityThread$FlymeInjector;->isFlymePermissionGranted(Landroid/app/ActivityThread$ReceiverData;Landroid/app/LoadedApk;)Z
+
+    move-result v15
+
+    if-nez v15, :cond_flyme_0
+
     .line 3052
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -10830,6 +10836,7 @@
 
     .end local v3    # "bugMan":Landroid/util/BugManager;
     :cond_0
+    :cond_flyme_0
     sget-object v15, Landroid/app/ActivityThread;->sCurrentBroadcastIntent:Ljava/lang/ThreadLocal;
 
     const/16 v16, 0x0

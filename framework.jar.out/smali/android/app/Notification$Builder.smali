@@ -1051,6 +1051,8 @@
 
     const v3, #android:id@actions#t
 
+    const/4 v15, 0x1
+
     invoke-virtual {v11, v3, v2, v15}, Landroid/widget/RemoteViews;->setBoolean(ILjava/lang/String;Z)V
 
     if-lez v9, :cond_8
@@ -1071,7 +1073,7 @@
 
     const v3, #android:dimen@notification_action_list_height#t
 
-    invoke-virtual {v11, v2, v3}, Landroid/widget/RemoteViews;->setViewLayoutMarginBottomDimen(II)V
+    #invoke-virtual {v11, v2, v3}, Landroid/widget/RemoteViews;->setViewLayoutMarginBottomDimen(II)V
 
     const/4 v2, 0x3
 
@@ -1124,14 +1126,19 @@
     :goto_4
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v10, v15, v2}, Landroid/app/Notification$Builder;->generateActionButton(Landroid/app/Notification$Action;ZZ)Landroid/widget/RemoteViews;
+    invoke-direct {v0, v10}, Landroid/app/Notification$Builder;->generateActionButtonFlyme(Landroid/app/Notification$Action;)Landroid/widget/RemoteViews;
 
     move-result-object v12
 
     .local v12, "button":Landroid/widget/RemoteViews;
+    
+    move-object/from16 v0, p0
+    
+    invoke-direct {v0, v12, v5}, Landroid/app/Notification$Builder;->setFlymeViewPadding(Landroid/widget/RemoteViews;I)V
+    
     const v2, #android:id@actions#t
 
-    invoke-virtual {v11, v2, v12}, Landroid/widget/RemoteViews;->addView(ILandroid/widget/RemoteViews;)V
+    invoke-virtual {v11, v2, v16}, Landroid/widget/RemoteViews;->addView(ILandroid/widget/RemoteViews;)V
 
     add-int/lit8 v16, v16, 0x1
 

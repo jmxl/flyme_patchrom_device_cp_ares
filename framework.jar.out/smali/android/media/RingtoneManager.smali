@@ -539,6 +539,13 @@
     .param p1, "type"    # I
 
     .prologue
+    
+    invoke-static/range {p0 .. p1}, Landroid/media/MzRingtoneManager;->getActualDefaultRingtoneUri(Landroid/content/Context;I)Landroid/net/Uri;
+
+    move-result-object v2
+
+    return-object v2
+    
     const/4 v4, 0x0
 
     .line 741
