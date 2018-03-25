@@ -3957,7 +3957,7 @@
     .local v20, "mmsService":Lcom/android/server/MmsServiceBroker;
     move-object/from16 v4, p0
 
-    move-object/from16 v5, v88
+    move-object/from16 v5, v93
 
     invoke-static {v4, v5}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeServices(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;)V
 

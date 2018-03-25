@@ -3672,8 +3672,7 @@
 
     .prologue
     .line 1563
-    invoke-static {p1}, Lcom/android/server/notification/NotificationManagerService;->-wrap16(Ljava/lang/String;)V
-
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/notification/NotificationManagerService$6;->checkCallerIsSystemOrSystemUIOrSamePackage(Ljava/lang/String;)V
     .line 1564
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -5188,7 +5187,7 @@
 
     .prologue
     .line 1528
-    invoke-static {}, Lcom/android/server/notification/NotificationManagerService;->-wrap17()V
+   invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService$6;->checkCallerIsSystemOrSystemUI()V
 
     .line 1529
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
