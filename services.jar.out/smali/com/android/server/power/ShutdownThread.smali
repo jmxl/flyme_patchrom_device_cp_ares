@@ -327,7 +327,7 @@
 
     invoke-virtual {v0, v5}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgressNumberFormat(Ljava/lang/String;)V
 
-    invoke-virtual {v10, v3}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgressStyle(I)V
+    invoke-virtual {v0, v3}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgressStyle(I)V
 
     const v1, #android:string@reboot_to_update_prepare#t
 

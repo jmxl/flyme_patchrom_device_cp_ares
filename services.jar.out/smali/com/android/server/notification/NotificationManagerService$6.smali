@@ -963,7 +963,7 @@
 
     move-result v0
 
-    invoke-direct/range {p0 .. p1}, Lcom/android/server/notification/NotificationManagerService$6;->checkCallerIsSystemOrSystemUIOrSamePackage(Ljava/lang/String;)V
+    invoke-virtual {p0, p1, v0}, Lcom/android/server/notification/NotificationManagerService$6;->areNotificationsEnabledForPackage(Ljava/lang/String;I)Z
 
     move-result v0
 
@@ -979,7 +979,7 @@
     const/4 v0, 0x0
 
     .line 1521
-    invoke-static {p1}, Lcom/android/server/notification/NotificationManagerService;->-wrap16(Ljava/lang/String;)V
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/notification/NotificationManagerService$6;->checkCallerIsSystemOrSystemUIOrSamePackage(Ljava/lang/String;)V
 
     .line 1522
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$6;->this$0:Lcom/android/server/notification/NotificationManagerService;
