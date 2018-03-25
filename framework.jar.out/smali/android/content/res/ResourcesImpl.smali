@@ -1268,7 +1268,7 @@
 .end method
 
 .method private loadDrawableForCookie(Landroid/content/res/Resources;Landroid/util/TypedValue;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .locals 23
+    .locals 9
     .param p1, "wrapper"    # Landroid/content/res/Resources;
     .param p2, "value"    # Landroid/util/TypedValue;
     .param p3, "id"    # I
@@ -1276,557 +1276,244 @@
 
     .prologue
     .line 740
-    move-object/from16 v0, p2
+    iget-object v6, p2, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
-    iget-object v0, v0, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
-
-    move-object/from16 v20, v0
-
-    if-nez v20, :cond_0
+    if-nez v6, :cond_0
 
     .line 741
-    new-instance v20, Landroid/content/res/Resources$NotFoundException;
+    new-instance v6, Landroid/content/res/Resources$NotFoundException;
 
-    new-instance v21, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v22, "Resource \""
+    const-string/jumbo v8, "Resource \""
 
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v21
+    move-result-object v7
 
-    move-object/from16 v0, p0
+    invoke-virtual {p0, p3}, Landroid/content/res/ResourcesImpl;->getResourceName(I)Ljava/lang/String;
 
-    move/from16 v1, p3
+    move-result-object v8
 
-    invoke-virtual {v0, v1}, Landroid/content/res/ResourcesImpl;->getResourceName(I)Ljava/lang/String;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v22
+    move-result-object v7
 
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string/jumbo v8, "\" ("
 
-    move-result-object v21
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v22, "\" ("
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
+    move-result-object v7
 
     .line 742
-    invoke-static/range {p3 .. p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-static {p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v22
+    move-result-object v8
 
     .line 741
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v21
+    move-result-object v7
 
     .line 742
-    const-string/jumbo v22, ") is not a Drawable (color or path): "
+    const-string/jumbo v8, ") is not a Drawable (color or path): "
 
     .line 741
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v21
+    move-result-object v7
 
-    move-object/from16 v0, v21
+    invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v1, p2
+    move-result-object v7
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v21
+    move-result-object v7
 
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v6, v7}, Landroid/content/res/Resources$NotFoundException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v21
-
-    invoke-direct/range {v20 .. v21}, Landroid/content/res/Resources$NotFoundException;-><init>(Ljava/lang/String;)V
-
-    throw v20
+    throw v6
 
     .line 745
     :cond_0
-    move-object/from16 v0, p2
+    iget-object v6, p2, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
-    iget-object v0, v0, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
+    invoke-interface {v6}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    move-object/from16 v20, v0
-
-    invoke-interface/range {v20 .. v20}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v10
+    move-result-object v2
 
     .line 764
-    .local v10, "file":Ljava/lang/String;
-    const-wide/16 v20, 0x2000
+    .local v2, "file":Ljava/lang/String;
+    const-wide/16 v6, 0x2000
 
-    move-wide/from16 v0, v20
-
-    invoke-static {v0, v1, v10}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
+    invoke-static {v6, v7, v2}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
     .line 769
     :try_start_0
-    invoke-virtual/range {p1 .. p1}, Landroid/content/res/Resources;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+    const-string/jumbo v6, ".xml"
 
-    move-result-object v20
+    invoke-virtual {v2, v6}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move/from16 v0, p3
+    move-result v6
 
-    move-object/from16 v1, v20
-
-    move-object/from16 v2, p1
-
-    invoke-static {v0, v1, v2}, Landroid/content/res/theme/ZsResourceHelper;->getZsThemeBuiltInAppResDrawable(ILandroid/content/pm/ApplicationInfo;Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v19
-
-    .line 770
-    .local v19, "zsBuiltInAppDrawable":Landroid/graphics/drawable/Drawable;
-    if-eqz v19, :cond_1
-
-    .line 771
-    return-object v19
-
-    .line 774
-    :cond_1
-    invoke-virtual/range {p1 .. p1}, Landroid/content/res/Resources;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v20
-
-    move/from16 v0, p3
-
-    move-object/from16 v1, v20
-
-    move-object/from16 v2, p1
-
-    invoke-static {v0, v1, v2}, Landroid/content/res/theme/ZsResourceHelper;->getZsTheme3rdAppResDrawable(ILandroid/content/pm/ApplicationInfo;Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v18
-
-    .line 775
-    .local v18, "zs3rdAppDrawable":Landroid/graphics/drawable/Drawable;
-    if-eqz v18, :cond_2
-
-    .line 776
-    return-object v18
-
-    .line 780
-    :cond_2
-    const-string/jumbo v20, ".xml"
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v10, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v20
-
-    if-eqz v20, :cond_4
+    if-eqz v6, :cond_1
 
     .line 782
-    move-object/from16 v0, p2
+    iget v6, p2, Landroid/util/TypedValue;->assetCookie:I
 
-    iget v0, v0, Landroid/util/TypedValue;->assetCookie:I
-
-    move/from16 v20, v0
-
-    const-string/jumbo v21, "drawable"
+    const-string/jumbo v7, "drawable"
 
     .line 781
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v2, p3, v6, v7}, Landroid/content/res/ResourcesImpl;->loadXmlResourceParser(Ljava/lang/String;IILjava/lang/String;)Landroid/content/res/XmlResourceParser;
 
-    move/from16 v1, p3
-
-    move/from16 v2, v20
-
-    move-object/from16 v3, v21
-
-    invoke-virtual {v0, v10, v1, v2, v3}, Landroid/content/res/ResourcesImpl;->loadXmlResourceParser(Ljava/lang/String;IILjava/lang/String;)Landroid/content/res/XmlResourceParser;
-
-    move-result-object v17
+    move-result-object v5
 
     .line 783
-    .local v17, "rp":Landroid/content/res/XmlResourceParser;
-    move-object/from16 v0, p1
+    .local v5, "rp":Landroid/content/res/XmlResourceParser;
+    invoke-static {p1, v5, p4}, Landroid/graphics/drawable/Drawable;->createFromXml(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v1, v17
-
-    move-object/from16 v2, p4
-
-    invoke-static {v0, v1, v2}, Landroid/graphics/drawable/Drawable;->createFromXml(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
+    move-result-object v0
 
     .line 784
-    .local v7, "dr":Landroid/graphics/drawable/Drawable;
-    invoke-interface/range {v17 .. v17}, Landroid/content/res/XmlResourceParser;->close()V
+    .local v0, "dr":Landroid/graphics/drawable/Drawable;
+    invoke-interface {v5}, Landroid/content/res/XmlResourceParser;->close()V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 839
-    .end local v17    # "rp":Landroid/content/res/XmlResourceParser;
-    :cond_3
+    .end local v5    # "rp":Landroid/content/res/XmlResourceParser;
     :goto_0
-    const-wide/16 v20, 0x2000
+    const-wide/16 v6, 0x2000
 
-    invoke-static/range {v20 .. v21}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static {v6, v7}, Landroid/os/Trace;->traceEnd(J)V
 
     .line 841
-    return-object v7
+    return-object v0
 
     .line 786
-    .end local v7    # "dr":Landroid/graphics/drawable/Drawable;
-    :cond_4
+    .end local v0    # "dr":Landroid/graphics/drawable/Drawable;
+    :cond_1
     :try_start_1
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/content/res/ResourcesImpl;->mAssets:Landroid/content/res/AssetManager;
-
-    move-object/from16 v20, v0
+    iget-object v6, p0, Landroid/content/res/ResourcesImpl;->mAssets:Landroid/content/res/AssetManager;
 
     .line 787
-    move-object/from16 v0, p2
+    iget v7, p2, Landroid/util/TypedValue;->assetCookie:I
 
-    iget v0, v0, Landroid/util/TypedValue;->assetCookie:I
-
-    move/from16 v21, v0
-
-    const/16 v22, 0x2
+    const/4 v8, 0x2
 
     .line 786
-    move-object/from16 v0, v20
+    invoke-virtual {v6, v7, v2, v8}, Landroid/content/res/AssetManager;->openNonAsset(ILjava/lang/String;I)Ljava/io/InputStream;
 
-    move/from16 v1, v21
-
-    move/from16 v2, v22
-
-    invoke-virtual {v0, v1, v10, v2}, Landroid/content/res/AssetManager;->openNonAsset(ILjava/lang/String;I)Ljava/io/InputStream;
-
-    move-result-object v13
+    move-result-object v3
 
     .line 788
-    .local v13, "is":Ljava/io/InputStream;
-    const/16 v20, 0x0
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, p2
-
-    move-object/from16 v2, v20
-
-    invoke-static {v0, v1, v13, v10, v2}, Landroid/content/res/ResourcesImpl$FlymeInjector;->createFromResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    .line 789
-    .restart local v7    # "dr":Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v13}, Ljava/io/InputStream;->close()V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 794
-    :try_start_2
-    invoke-virtual/range {p1 .. p1}, Landroid/content/res/Resources;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v12
-
-    .line 795
-    .local v12, "info":Landroid/content/pm/ApplicationInfo;
-    invoke-virtual/range {p1 .. p1}, Landroid/content/res/Resources;->getActivityInfo()Landroid/content/pm/ActivityInfo;
-
-    move-result-object v4
-
-    .line 796
-    .local v4, "activityInfo":Landroid/content/pm/ActivityInfo;
-    const/4 v5, -0x1
-
-    .line 797
-    .local v5, "appIcon":I
-    const/4 v14, 0x0
-
-    .line 798
-    .local v14, "packageName":Ljava/lang/String;
-    const/4 v11, -0x1
-
-    .line 799
-    .local v11, "iconRes":I
-    if-eqz v12, :cond_5
-
-    .line 800
-    iget v5, v12, Landroid/content/pm/ApplicationInfo;->icon:I
-
-    .line 801
-    iget-object v14, v12, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    .line 803
-    .end local v14    # "packageName":Ljava/lang/String;
-    :cond_5
-    if-eqz v4, :cond_6
-
-    .line 804
-    invoke-virtual {v4}, Landroid/content/pm/ActivityInfo;->getIconResource()I
-
-    move-result v11
-
-    .line 805
-    iget-object v14, v4, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
-
-    .line 807
-    :cond_6
-    if-lez v5, :cond_8
-
-    move/from16 v0, p3
-
-    if-ne v0, v5, :cond_8
-
-    .line 809
-    :goto_1
-    invoke-static {v14}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v20
-
-    if-nez v20, :cond_3
-
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v7}, Landroid/content/res/theme/ZsIconUtilities;->isRectangleIcon(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)I
-
-    move-result v15
-
-    .local v15, "rectangleIcon":I
+    .local v3, "is":Ljava/io/InputStream;
     const/4 v6, 0x0
 
-    .local v6, "bitmap":Landroid/graphics/Bitmap;
-    const/16 v20, 0x1
+    invoke-static/range {p1 .. p3}, Landroid/content/res/ResourcesImpl$FlymeInjector;->createFromResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
 
-    move/from16 v0, v20
+    move-result-object v0
 
-    if-eq v15, v0, :cond_7
+    .line 789
+    .restart local v0    # "dr":Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    const/16 v20, 0x2
+    goto :goto_0
 
-    move/from16 v0, v20
+    .line 795
+    .end local v0    # "dr":Landroid/graphics/drawable/Drawable;
+    .line 800
 
-    if-ne v15, v0, :cond_9
+    .line 801
+
+    .line 803
+    .end local v3    # "is":Ljava/io/InputStream;
+    :catch_0
+    .line 804
+    move-exception v1
+
+    .line 805
+
+    .line 807
+
+    .line 809
+    .local v1, "e":Ljava/lang/Exception;
+    const-wide/16 v6, 0x2000
+
+    invoke-static {v6, v7}, Landroid/os/Trace;->traceEnd(J)V
+
+
+    new-instance v4, Landroid/content/res/Resources$NotFoundException;
 
     .line 814
-    :cond_7
-    const-string/jumbo v20, "Resources"
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    new-instance v21, Ljava/lang/StringBuilder;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v7, "File "
 
-    const-string/jumbo v22, "drawMaskBitmap packageName = "
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string/jumbo v22, ",rectangleIcon = "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 815
-    const/16 v20, 0x2
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v20
-
-    invoke-static {v0, v7, v1}, Landroid/content/res/theme/ZsIconUtilities;->drawMaskBitmap(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;I)Landroid/graphics/Bitmap;
 
     move-result-object v6
 
     .line 820
-    .local v6, "bitmap":Landroid/graphics/Bitmap;
-    :goto_2
-    new-instance v8, Landroid/graphics/drawable/BitmapDrawable;
-
-    move-object/from16 v0, p1
-
-    invoke-direct {v8, v0, v6}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
     .line 822
-    .local v8, "dr1":Landroid/graphics/drawable/Drawable;
-    return-object v8
 
     .line 807
-    .end local v6    # "bitmap":Landroid/graphics/Bitmap;
-    .end local v8    # "dr1":Landroid/graphics/drawable/Drawable;
-    .end local v15    # "rectangleIcon":I
-    :cond_8
-    if-lez v11, :cond_3
-
-    move/from16 v0, p3
-
-    if-ne v11, v0, :cond_3
-
-    goto :goto_1
 
     .line 817
-    .local v6, "bitmap":Landroid/graphics/Bitmap;
-    .restart local v15    # "rectangleIcon":I
-    :cond_9
-    const-string/jumbo v20, "Resources"
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v22, "getThirdPartyAlienIcon packageName = "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    const-string/jumbo v22, ",rectangleIcon = "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 818
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v7}, Landroid/content/res/theme/ZsIconUtilities;->getThirdPartyAlienIcon(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     move-result-object v6
 
-    .local v6, "bitmap":Landroid/graphics/Bitmap;
-    goto :goto_2
-
     .line 826
-    .end local v4    # "activityInfo":Landroid/content/pm/ActivityInfo;
-    .end local v5    # "appIcon":I
-    .end local v6    # "bitmap":Landroid/graphics/Bitmap;
-    .end local v11    # "iconRes":I
-    .end local v12    # "info":Landroid/content/pm/ApplicationInfo;
-    .end local v15    # "rectangleIcon":I
-    :catch_0
-    move-exception v9
 
     .line 827
-    .local v9, "e":Ljava/lang/Exception;
-    :try_start_3
-    invoke-virtual {v9}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-
-    goto/16 :goto_0
 
     .line 832
-    .end local v7    # "dr":Landroid/graphics/drawable/Drawable;
-    .end local v9    # "e":Ljava/lang/Exception;
-    .end local v13    # "is":Ljava/io/InputStream;
-    .end local v18    # "zs3rdAppDrawable":Landroid/graphics/drawable/Drawable;
-    .end local v19    # "zsBuiltInAppDrawable":Landroid/graphics/drawable/Drawable;
-    :catch_1
-    move-exception v9
 
     .line 833
-    .restart local v9    # "e":Ljava/lang/Exception;
-    const-wide/16 v20, 0x2000
-
-    invoke-static/range {v20 .. v21}, Landroid/os/Trace;->traceEnd(J)V
-
     .line 834
-    new-instance v16, Landroid/content/res/Resources$NotFoundException;
-
     .line 835
-    new-instance v20, Ljava/lang/StringBuilder;
+    const-string/jumbo v7, " from drawable resource ID #0x"
 
-    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v21, "File "
+    move-result-object v6
 
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v20
+    move-result-object v7
 
-    move-object/from16 v0, v20
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v20
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string/jumbo v21, " from drawable resource ID #0x"
-
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-static/range {p3 .. p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v20
+    move-result-object v6
 
     .line 834
-    move-object/from16 v0, v16
-
-    move-object/from16 v1, v20
-
-    invoke-direct {v0, v1}, Landroid/content/res/Resources$NotFoundException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v6}, Landroid/content/res/Resources$NotFoundException;-><init>(Ljava/lang/String;)V
 
     .line 836
-    .local v16, "rnf":Landroid/content/res/Resources$NotFoundException;
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v9}, Landroid/content/res/Resources$NotFoundException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    .local v4, "rnf":Landroid/content/res/Resources$NotFoundException;
+    invoke-virtual {v4, v1}, Landroid/content/res/Resources$NotFoundException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     .line 837
-    throw v16
+    throw v4
 .end method
 
 .method private verifyPreloadConfig(IIILjava/lang/String;)Z
