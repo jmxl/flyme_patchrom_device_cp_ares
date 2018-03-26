@@ -27361,7 +27361,7 @@
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, p2
+    move-object/from16 v1, p1
 
     move/from16 v2, v18
 

@@ -5425,7 +5425,7 @@
     .prologue
     const-string v0, "Caller not system or systemui or same app"
 
-    invoke-direct {p0, p1, v0}, Lcom/android/server/notification/NotificationManagerService$5;->enforceSystemOrSystemUIOrSamePackage(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUIOrSamePackage(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -5436,7 +5436,7 @@
     .prologue
     const-string v0, "Caller not system or systemui"
 
-    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$5;->enforceSystemOrSystemUI(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService$6;->enforceSystemOrSystemUI(Ljava/lang/String;)V
 
     return-void
 .end method
