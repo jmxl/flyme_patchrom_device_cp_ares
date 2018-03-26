@@ -262,9 +262,16 @@
 
     const-string/jumbo v4, "0"
 
+    new-instance v0, Landroid/app/ProgressDialog;
+    
+    invoke-direct {v0, p0}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
+
     invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 306
+    
+    .local v0, "pd":Landroid/app/ProgressDialog;
+    
     const-string/jumbo v3, "ctl.start"
 
     const-string/jumbo v4, "shutdownanim"
@@ -311,7 +318,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
     sget-boolean v1, Lcom/android/server/power/ShutdownThread;->mRebootHasProgressBar:Z
 
@@ -319,15 +326,15 @@
 
     const/16 v1, 0x64
 
-    invoke-virtual {v0, v1}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setMax(I)V
+    invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMax(I)V
 
-    invoke-virtual {v0, v2}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgress(I)V
+    invoke-virtual {v0, v2}, Landroid/app/ProgressDialog;->setProgress(I)V
 
-    invoke-virtual {v0, v2}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setIndeterminate(Z)V
+    invoke-virtual {v0, v2}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
-    invoke-virtual {v0, v5}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgressNumberFormat(Ljava/lang/String;)V
+    invoke-virtual {v0, v5}, Landroid/app/ProgressDialog;->setProgressNumberFormat(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v3}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setProgressStyle(I)V
+    invoke-virtual {v0, v3}, Landroid/app/ProgressDialog;->setProgressStyle(I)V
 
     const v1, #android:string@reboot_to_update_prepare#t
 
@@ -335,12 +342,12 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     #:goto_1
-    invoke-virtual {v0, v2}, Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->setCancelable(Z)V
+    invoke-virtual {v0, v2}, Landroid/app/ProgressDialog;->setCancelable(Z)V
 
-    invoke-virtual {v0},Lcom/zeusis/widget/dialog/ZeusisProgressDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0},Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -355,7 +362,7 @@
     :cond_2
     sget-object v1, Lcom/android/server/power/ShutdownThread;->sInstance:Lcom/android/server/power/ShutdownThread;
 
-    iput-object v1, v2, Lcom/android/server/power/ShutdownThread;->mProgressDialog:Lcom/zeusis/widget/dialog/ZeusisProgressDialog;
+    iput-object v1, v2, Lcom/android/server/power/ShutdownThread;->mProgressDialog:Landroid/app/ProgressDialog;
 
     .line 378
     sget-object v2, Lcom/android/server/power/ShutdownThread;->sInstance:Lcom/android/server/power/ShutdownThread;
@@ -487,6 +494,7 @@
     return-void
 
     .line 296
+    .end local v0    # "pd":Landroid/app/ProgressDialog;
     :catchall_0
     move-exception v1
 
