@@ -40,7 +40,7 @@ vendor_modify_images := boot
 # The default value is app or pri-app which not need to configure.
 # You can configure the directory name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-vendor_remove_dirs := presetapp media/journeyui-theme/icons_1080p_1
+vendor_remove_dirs := presetapp media/journeyui-theme/icons_1080p_1 media/journeyui-theme/wallpaper vendor/overlay
 
 ##############################################################################
 # The value decides the file which you want to remove in the vendor directory for the ota package.
@@ -54,7 +54,7 @@ vendor_remove_files := recovery-from-boot.bak etc/CoolpadInstall.iso etc/recover
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BluetoothMidiService EasterEgg GoogleExtShared GooglePrintRecommendationService HTMLViewer KeyChain PacProcessor PrintSpooler Stk UserDictionaryProvider WAPPushManager WallpaperBackup BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver DefaultContainerService EmergencyInfo ExternalStorageProvider FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager WallpaperCropper
+vendor_saved_apps := Bluetooth BluetoothMidiService EasterEgg GMSCore GoogleServicesFramework GoogleExtServices GoogleExtShared GooglePrintRecommendationService HydraService HTMLViewer KeyChain PacProcessor PrintSpooler Stk UserDictionaryProvider WAPPushManager WallpaperBackup BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver DefaultContainerService EmergencyInfo ExternalStorageProvider FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager WallpaperCropper
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
